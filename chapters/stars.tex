@@ -1,0 +1,275 @@
+
+In Newtonian theory the stability of stars is described in terms of
+hydrostatic equilibrium. In the framework of General Relativity this
+is similar, leading to the Oppenheimer-Volkoff equation.
+
+\section{Components of the Einstein tensor}
+\label{sec:comp-einst-tens}
+
+The stellar interior will have a metric of the form
+\[ \dd{s}^2 = -e^\nu \dd{t}^2 + e^{\lambda} \dd{r}^2 + r^2 \qty(
+\dd{\theta}^2 + \sin[2](\theta) \dd{\phi}^2 )\] where $\nu$ and
+$\lambda$ are functions of $r$. The Ricci tensor will have components
+\begin{subequations}
+\begin{equation}
+  \label{eq:193}
+  R_{tt} = \half e^{\nu-\lambda} \qty( \nu'' + \half \nu'^2 - \half \nu' \lambda' + \frac{2}{r} \nu')
+\end{equation}
+\begin{equation}
+  \label{eq:201}
+  R_{rr} = - \half \qty( \nu'' + \half \nu'^2 - \half \nu' \lambda' - \frac{2}{r} \lambda')
+\end{equation}
+\begin{equation}
+  \label{eq:202}
+  R_{\theta \theta} = 1 - e^{- \lambda} \qty( 1 + \frac{r}{2} ( \nu' - \lambda') )
+\end{equation}
+\begin{equation}
+  \label{eq:203}
+  R_{\phi \phi} = R_{\theta \theta} \sin[2](\theta)
+\end{equation}
+\end{subequations}
+with all other components zero. The metric is orthogonal, so
+\begin{subequations}
+  \begin{align}
+    g^{tt} &= - e^{- \nu} \\ g^{rr} &= e^{- \lambda} \\ g^{\theta \theta} &= r^{-2} \\ g^{\phi \phi} &= (r^2 \sin[2](\theta) )^{-1}
+  \end{align}
+\end{subequations} 
+again, with all other terms zero.
+The Ricci and metric tensors are orthogonal, so the Ricci scalar has the expression
+\begin{equation}
+  \label{eq:204}
+  R = g^{\mu \nu} R_{\mu \nu} = g^{tt}R_{tt} + g^{rr} R_{rr} + g^{ \theta \theta} R_{\theta \theta} + g^{\phi \phi} R_{ \phi \phi}
+\end{equation}
+after making the appropriate substitutions, we find
+\begin{equation}
+  \label{eq:205}
+  \begin{split}
+    R = - e^{-\lambda} \qty[ \qty( \nu'' + \half \nu'^2 - \half \nu' \lambda' ) + \frac{\nu' - \lambda'}{r}]\\
+{}+\frac{2}{r^2} \qty[1 - e^{- \lambda} \qty( 1+ \frac{(\nu' - \lambda')r}{2})]
+  \end{split}
+\end{equation}
+The fully covariant Einstein tensor is
+\[ G_{\mu \nu} = R_{\mu \nu} - \half g_{\mu \nu} R \]
+so
+\begin{subequations}
+  \begin{align}
+    G_{tt} &= \frac{e^{\nu}}{r^2} \qty[ 1+ e^{-\lambda} (r \lambda' -1) ] \\
+G_{rr} &= \frac{\nu'}{r} - \frac{e^{\lambda}}{r^2} \qty( 1 - e^{- \lambda}) \\
+G_{\theta \theta} &= r^2 e^{- \lambda} \qty[ \frac{\nu''}{2} + \frac{\nu'^2}{4} - \frac{\nu' \lambda'}{4} + \frac{\nu'-\lambda'}{2r}] \\
+G_{\phi \phi} &= \sin[2](\theta) G_{\theta \theta}
+  \end{align}
+\end{subequations}
+
+\section{Components of the energy-momentum tensor}
+\label{sec:comp-energy-moment}
+
+For a perfect fluid the energy-momentum tensor, in fully covariant
+form has components
+\[ T^{\mu \nu} = (\rho + P) u^{\mu} u^{\nu} + P g^{\mu \nu} \] for
+$\rho$ the mass-energy density, and $P$ the pressure, while $u^{\mu}$
+are the four velocity components of a fluid element. Seeking a static
+solution has $u^{i} = 0, i = \set{1,2,3}$, so from the geodesic
+equation
+\begin{equation}
+  \label{eq:206}
+  g_{tt}(u^t)^2 = -1 \implies u^t = e^{- \frac{\nu}{2}}
+\end{equation}
+thus
+\begin{subequations}
+  \begin{align}
+    T_{tt} &= \rho e^{\nu} \\
+T_{rr} &= P e^{\lambda} \\
+T_{\theta \theta} &= P r^2 \\
+T_{\phi \phi} &= P r^2 \sin[2](\theta)
+  \end{align}
+\end{subequations}
+
+\section{Einstein's equations}
+\label{sec:einsteins-equations-1}
+
+In fully covariant form
+\[ G_{\mu \nu} = 8 \pi T_{\mu \nu} \]
+so
+\begin{subequations}
+  \begin{align}
+\label{eq:207}
+    \frac{e^{\nu}}{r^2} \qty[  1+ e^{-\lambda} (r \lambda' -1) ] &= 8 \pi \rho e^{\nu} \\
+\label{eq:208}
+    \frac{\nu'}{r} - \frac{e^{\lambda}}{r^2} (1-e^-\lambda) &= 8 \pi P e^{\lambda} \\
+\label{eq:209}
+r^2 e^{-\lambda} \qty[ \frac{\nu''}{2} + \frac{\nu'^2}{4} - \frac{\nu' \lambda'}{4} + \frac{\nu'-\lambda'}{2r}] &= 8 \pi P r^2
+  \end{align}
+\end{subequations}
+
+\section{Solution of the first Einstein equation}
+\label{sec:solut-first-einst}
+
+By cancelling the $e^{\nu}$ term in equation (\ref{eq:207}), and
+rearranging,
+\begin{equation}
+  \label{eq:210}
+  \dv{r} \qty[ r(1-e^{-\lambda})] = 8 \pi \rho r^2
+\end{equation}
+Then introducing the mass function, $m(r)$, defined as
+\begin{equation}
+  \label{eq:211}
+  \dv{m}{r} = 4 \pi \rho r^2 = \half \dv{r} \qty[r (1-e^{-\lambda})]
+\end{equation}
+and integrating,
+\begin{equation}
+  \label{eq:212}
+  r(1-e^{-\lambda}) = 2m +C 
+\end{equation}
+where $C$ is a constant of integration, equal to zero unless the star
+is singular at $r=0$. Thus
+\begin{equation}
+  \label{eq:213}
+  e^{-\lambda} = 1 - \frac{2m}{r}
+\end{equation}
+
+\section{The Oppenheimer-Volkoff equation}
+\label{sec:oppenh-volk-equat}
+
+Rearranging equation (\ref{eq:208}), with some straight-forward
+algebra,
+\begin{equation}
+  \label{eq:214}
+  \dv{\nu}{r} = e^{\lambda} \qty[8 \pi P r + \frac{1}{r} (1-e^{-\lambda})] = 2 \qty[\frac{4 \pi P r^3 + m}{r(r-2m)}]
+\end{equation}
+Then, considering conservation of mass-energy, $\tensor{T}{^{\alpha
+    \beta}_{;\beta}} = \qty[(\rho +P) u^{\alpha}u^{\beta} + P
+g^{\alpha \beta}]_{;\beta}= 0$, then
+\begin{equation}
+  \label{eq:215}
+\begin{split}
+  (\rho + P)_{;\beta} u^{\alpha} u^{\beta} + (\rho+P)(u^{\alpha})_{; \beta} u^{\beta} \\ + (\rho+P) u^{\alpha}(u^{\beta})_{; \beta} + P_{,\beta} g^{\alpha \beta} + Pg^{\alpha \beta}_{; \beta} = 0
+\end{split}
+\end{equation}
+This is infact a set of four equations, as $\alpha$ is a free index,
+so with just $\alpha \equiv r$,
+\begin{equation}
+  \label{eq:215}
+\begin{split}
+  (\rho + P)_{;\beta} u^{r} u^{\beta} + (\rho+P)(u^{r})_{; \beta} u^{\beta} \\ + (\rho+P) u^{r}(u^{\beta})_{; \beta} + P_{,\beta} g^{r \beta} + Pg^{r \beta}_{; \beta} = 0
+\end{split}
+\end{equation}
+But since $u^r=0$ two of these terms vanish, and the derivatives of
+the metric tensor are all zero, so the last term drops out too. We
+then have the simplification
+\begin{equation}
+  \label{eq:216}
+  ( \rho +P)(u^r)_{;t} u^t + \dv{P}{r} g^{rr} = 0
+\end{equation}
+then
+\begin{equation}
+  \label{eq:217}
+  u^r_{;t} = \Gamma^r_{tt} u^t = \half \nu' e^{\nu-\lambda} e^{-\nu/2} = \half e^{-\lambda} \nu' e^{\nu/2}
+\end{equation}
+Thus
+\begin{equation}
+  \label{eq:218}
+  \half(\rho + P) e^{-\lambda} \dv{\nu}{r} + e^{- \lambda} \dv{P}{r} = 0 \implies \dv{\nu}{r} = - \frac{2}{(\rho+P)} \dv{P}{r}
+\end{equation}
+and using this to eliminate $\nu'$ from equation (\ref{eq:214}),
+\begin{equation}
+  \label{eq:219}
+  \dv{P}{r} = - \frac{(\rho + P)(4 \pi P r^3 + m)}{r(r-2m)}
+\end{equation}
+which is the \emph{Oppenheimer-Volkoff} equation. In the weak-field limit, $P \ll \rho$ implies $4 \pi P r^3 \ll m$, and the metric will be almost flat, so $m \ll r$, so this simplifies to
+\begin{equation}
+  \label{eq:220}
+  \dv{P}{r} = - \frac{\rho m}{r^2}
+\end{equation}
+which is the Newtonian hydrostatic equilibrium equation.
+
+\section{Solving the O-V equation}
+\label{sec:solv-oppenh-volk}
+
+There are three unknown functions in the O-V equation, $P(r)$,
+$\rho(r)$, and $m(r)$, but the latter two are related, so we need an
+additional relation, an equation of state, to link all three, in the form
+\[ P(r) = P(\rho(r)) \]
+For a fluid which is in local thermodynamic equilibrium there is always a relation between pressure, density, and entropy, of the form
+\[ P=P(\rho,S) \] In most astrophysical situations we can regard $S$
+as constant. In practice, to solve this system we need boundary
+conditions.
+
+Take $P=P_0$ and $m=0$ at $r=0$, and integrate outwards to $P=0$ at
+the surface of the star, where $r=R$ and $m=M$, where $M$ is the mass
+constant in the exterior Schwarzschild metric. This then allows us to
+find $\nu$ and $\lambda$ to form a complete expression for the metric
+inside the star. The effect of GR compared to Newtonian mechanics will
+be to steepen the pressure gradient within the star.
+
+\section[Constant density star solution]{An exact solution for a star with constant density}
+\label{sec:an-exact-solution}
+
+Suppose that the density is constant, and $\rho=\rho_0$ (implying,
+rather concerningly, an infinite sound speed!), and integrating
+equation (\ref{eq:211}), and retrieve
+\begin{equation}
+  \label{eq:221}
+  m(r) = \frac{4}{3} \pi \rho_0 r^3
+\end{equation}
+This can be substituted into the O-V equation, giving
+\begin{equation}
+  \label{eq:222}
+  \dv{P}{r} = - \frac{4}{3} \pi r \frac{(\rho_0+P)(\rho_0 + 3 P)}{(1 - \frac{8 \pi \rho_0 r^2}{3})}
+\end{equation}
+thus
+\begin{align*}
+  \label{eq:223}
+  \frac{\dd{P}}{(\rho_0 +P)(\rho_0 + 3P)} &= \frac{1}{2 \rho_0} \qty[\frac{3 \dd{P}}{(\rho_0 + 3P)} - \frac{\dd{P}}{(\rho_0 +P)}] \\ &= - \frac{4 \pi}{3} \frac{r \dd{r}}{\qty(1 - \frac{8 \pi \rho_0 r^2}{3})}
+\end{align*}
+and integrating both sides,
+\begin{equation}
+  \label{eq:224}
+  \log( \rho_0 + 3P) - \log(\rho_0 + P) = \half \log(1 - \frac{8 \pi \rho_0 r^2}{3}) + C
+\end{equation}
+for a constant $C$, which can be written
+\begin{equation}
+  \label{eq:225}
+  \frac{\rho_0 + 3P}{\rho_0+P} = A \qty( 1 - \frac{8 \pi \rho_0 r^2}{3})^{1/2}
+\end{equation}
+when $r=0$ we have $P=P_0$, so we can express $A$ in terms of density and central pressure,
+\[ A = \frac{\rho_0 + 3 P_0}{\rho_0 +P_0} \]
+Then
+\begin{align}
+  \label{eq:226}
+  \frac{\rho_0 + 3P}{\rho_0 + P} &= \frac{\rho_0 + 3P_0}{\rho_0 + P_0}  \qty( 1 - \frac{8 \pi \rho_0 r^2}{3})^{1/2} \nonumber\\
+&=  \frac{\rho_0 + 3P_0}{\rho_0 + P_0} \qty( 1 - \frac{2m}{r})^{1/2}
+\end{align} at the surface of the star $P=0$ so the left hand reduces
+to $1$, so
+\begin{equation}
+  \label{eq:227}
+  \frac{\rho_0 + 3P_0}{\rho_0 + P_0} \qty( 1 - \frac{2m}{r})^{1/2} = 1
+\end{equation}
+for $M$ the Schwarzschild mass, and $R$ is the coordinate radius of
+the star. We can obtain an expression for $P$ as a function of $r$ by rearranging,
+\begin{equation}
+  \label{eq:228}
+  P_0 = \frac{\rho_0 \qty[ 1 - \qty( 1 - \frac{2M}{R} )^{1/2}]}{3 \qty( 1 - \frac{2M}{R})^{1/2} - 1}
+\end{equation}
+
+\section{Buchdahl's Theorem}
+\label{sec:buchdahls-theorem}
+
+From equation (\ref{eq:228}), it can be seen that as $P_0 \to \infty$
+when $3 \qty(1- \frac{2M}{R})^{1/2} \to 1$, that is, when $M/R \to
+4/9$. Clearly there can be no static star with uniform density with a
+radius smaller than $9M/4$, as they would require an infinite internal
+pressure. If we require the exterior metric to be well-behaved then
+stars with a radius less than $2M$ should be excluded, as the
+Schwarzschild metric misbehaves at this point, with timelike intervals
+becoming spacelike, and vice versa.
+
+As a result we can exclude the possibility of a uniform static star
+with these properties, and \emph{Buchdahl's theorem} is a rigorous
+proof of this.
+
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "../project"
+%%% End: 

@@ -1,0 +1,37 @@
+
+\newcommand{\mobstrip}[1]{%
+\draw [very thick, top color=white,
+       bottom color=muted-blue, rotate=#1,
+       draw=muted-blue
+      ]
+ (0:2.8453)    ++ (-30:1.5359) arc (60:0:2)
+            -- ++  (90:5) arc (0:60:2) 
+            -- ++ (150:3) arc (60:120:2) 
+            -- ++ (210:5) arc (120:60:2) -- cycle;
+}%
+
+\begin{tikzpicture} [rotate=22, scale=0.5]
+   \begin{scope} [transform shape]
+     \mobstrip{0}
+     \mobstrip{120}
+     \mobstrip{-120}
+     \draw [
+     ultra thick, accent-red,
+     decoration={markings, mark=at position 0.625 with {\arrow{>}}},
+        postaction={decorate}
+     ] (-60:3.5) circle (1);
+     \draw [
+     ultra thick, accent-red,
+          decoration={markings, mark=at position 0.625 with {\arrow{<}}},
+        postaction={decorate}
+     ](180:3.5) circle (1);
+  %   % redraw the first strip after clipping
+  %   \clip (-1.4,2.4)--(-.3,6.1)--(1.3,6.1)--(5.3,3.7)--(5.3,-2.7)--cycle;
+  %   \strip{0}
+  %   \draw (60:3.5) node [gray,xscale=-4,yscale=4,rotate=30]{b};
+   \end{scope}
+\end{tikzpicture}
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "../project"
+%%% End: 

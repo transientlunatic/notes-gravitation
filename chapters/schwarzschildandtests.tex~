@@ -1,0 +1,31 @@
+There are four major classical tests of general relativity
+\begin{enumerate}
+\item advance of pericentre
+\item light deflection
+\item redshift
+\item time delay
+\end{enumerate}
+
+\section{Geodesics of the Schwarzschild metric}
+\label{sec:geod-schw-metr}
+
+\section{Planetary orbits in Newtonian gravity}
+\label{sec:plan-orbits-newt}
+
+\section{Advance of pericentre}
+\label{sec:advance-pericentre}
+
+\section{Gravitational light deflection}
+\label{sec:grav-light-defl}
+
+\section{Gravitational redshift}
+\label{sec:grav-redsh-1}
+
+\section{Gravitational time delay}
+\label{sec:grav-time-delay}
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "../project"
+%%% End: 

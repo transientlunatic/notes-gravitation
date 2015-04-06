@@ -1,0 +1,589 @@
+
+\section{Manifolds}
+\label{sec:manifolds}
+
+$\rn$ is the set of all $n$-tuples of real numbers. A set $M$ is
+defined to be a manifold if each element of $M$ has an open
+neighbourhood with a continuous bijection onto an open set of $\rn$
+for some $n$. This mathematical object is rather degenerate, and
+hasn't got, for example, a notion of distance, and what structure is
+defined is only at a local level.
+
+The elements, $P$ of $M$ have a unique $n$-tuple, the co-ordinates of
+$P$:
+\begin{equation}
+  \label{eq:5}
+  \qty( x_1(P), x_2(P), \dots, x_n(P) )
+\end{equation}
+
+\begin{figure}[b]
+  \centering
+  \input{figures/manifold-atlas}
+  \caption{Open sets $U$ and $V$ of a manifold which can be mapped, by the functions $f_U$ and $f_V$ onto open sets in $\mathbb{R}^n$, $f_U(u)$ and $f_V(v)$.}
+  \label{fig:manifolds}
+\end{figure}
+
+Let $f:U(P) \to \rn$ be a function from a neighbourhood $U$ around
+$P\in M$ of $M$ onto an open set $f(U) \in \rn$, then the pair,
+$(U,f)$ are a chart. The open neighbourhoods must overlap if all
+points of $M$ must be included in at least one, and so these overlaps
+give an additional characterisation of the manifold. Suppose $V$ is a
+neighbourhood overlapping $U$, such that $V$ has a map $g$ onto an
+open region of $\rn$, this region may be completely disjoint from the
+equivalent region for $U$. The open intersection of $U$ and $V$ is
+described by two coordinate systems, so there should be an expression
+connecting the two. Such an equation is a \emph{coordinate
+  transformation}.
+
+\begin{definition}[Manifold]
+  A manifold is a second-countable Hausdorff space which is locally
+  homeomorphic to Euclidean space.
+\end{definition}
+\begin{definition}[Chart]
+  A chart $(U, f_U)$ of a manifold is an open set $U$ together with a
+  mapping $f_U: U \to \rn$.
+\end{definition}
+\begin{definition}[Coordinates]
+  The coordinates $(x^1, \cdots, x^n)$ of the image $f_U(x) \in \rn$
+  are the coordinates of $x$ in the chart $(U, f_U)$; the local
+  coordinate system.
+\end{definition}
+
+If a whole system of charts, an atlas, can be constructed such that
+every point in $M$ is in at least one neighbourhood, and every chart
+is $C^k$-related to every overlapping neighbour the manifold is
+$C^k$. Any such manifold for $C^1$ or greater is a differentiable
+manifold.
+
+Many mathematical spaces can be considered as manifolds, for example
+the space of Lorentz boosts, mechanical phase space, solution spaces
+for functions, and vector spaces. Groups also have representations as
+manifolds; a Lie group, e.g. the group of rotations of a rigid object
+in space is also a $C^{\infty}$ manifold.
+
+\begin{figure}[b]
+  \centering
+  \input{figures/mobius}
+  \caption{The M\"obius strip, a non-orientable manifold; as such,
+    there is no consistent notion of a clockwise or an anti-clockwise
+    orientation across the whole manifold.}
+  \label{fig:mobius}
+\end{figure}
+
+\begin{definition}[Orientability]
+  Let $M^n$ be a differentiable $n$-dimensional manifold equipped with
+  an atlas $\set{\phi_a}$, and suppose that for any two charts of the
+  atlas, $\phi_{\alpha}$, and $\phi_{\beta}$ the Jacobian of the
+  transition function $\phi_{\beta \alpha} = \phi_{\beta} \circ
+  \phi_{\alpha}^{-1}$ is positive at all points in the domain, then
+  $M$ is an orientable manifold.
+\end{definition}
+A Jacobian which is negative will reverse the orientation of a
+coordinate system.
+
+\section{Global Properties}
+\label{sec:global-properties}
+
+At a local level all manifolds look like $\rn$, but on a global level
+this is not the case. For example a sphere, $S^2$ and a crayon are
+both two-dimensional manifolds, and neither has a single map to
+$\mathbb{R}^2$, but there is a continuous map from one to the other.
+If there is a $C^{\infty}$ bijective map from one $C^{\infty}$
+manifold to another, then the two map is a \emph{diffeomorphism} from
+one manifold to the other.
+
+\begin{figure}[t]
+  \centering
+  \begin{tikzpicture}[scale=0.45]
+    \begin{scope}[yshift=120]
+      \draw[ultra thick, muted-green] (0,0) -- (10,0); 
+      \node at (-1,0) {$\lambda$} ;
+      \foreach \coor in {0,1,...,10}
+      \coordinate (re\coor) at (\coor, 0);
+    \end{scope}
+    \begin{scope}[xshift=-50]
+	\shade[left color=muted-blue!10,right color=muted-blue!80] 
+	  (0,0) to[out=-10,in=150] (6,-2) -- (12,1) to[out=150,in=-10] (5.5,3.7) -- cycle;
+
+	\begin{scope}[scale=0.4, xshift=300]
+		\coordinate (A) at (0,0);
+		\draw node at (6, -0.5) {$U$};
+		\fill[opacity=0.1, fill=black, dotted] 
+		  (0,0) to[out=-10,in=150] (6,-2) -- (12,1) to[out=150,in=-10] (5.5,3.7) -- cycle;
+	\end{scope}
+	\begin{scope}[scale=0.3, xshift=400, yshift=100]
+		\coordinate (B) at (12,1);
+		\draw node at (6, 2.5) {$V$};
+		\fill[opacity=0.1, fill=black, dotted] 
+		  (0,0) to[out=-10,in=150] (6,-2) -- (12,1) to[out=150,in=-10] (5.5,3.7) -- cycle;
+	\end{scope}
+
+\draw[muted-orange,line width=1.5pt,shorten >= 3pt,shorten <= 3pt] 
+  (0,0) .. controls (6,-0.2) and (5,1.5) ..
+  coordinate[pos=0.0] (cux0)
+  coordinate[pos=0.1] (cux1) 
+  coordinate[pos=0.2] (cux2) 
+  coordinate[pos=0.3] (cux3) 
+  coordinate[pos=0.4] (cux4) 
+  coordinate[pos=0.5] (cux5) 
+  coordinate[pos=0.6] (cux6) 
+  coordinate[pos=0.7] (cux7) 
+  coordinate[pos=0.8] (cux8) 
+  coordinate[pos=0.9] (cux9) 
+  coordinate[pos=1.0] (cux10) (12,1);
+\draw (cux0) node [above] {$g(\lambda)$};
+% we draw the filled red circles on the red line
+\foreach \coor in {0,1,...,10}{
+  \draw [help lines] (cux\coor) edge [out=90, in=270] (re\coor);
+  \draw[fill=muted-green, draw=white] (re\coor) circle (3pt);
+  \draw[fill=muted-orange, draw=white] (cux\coor) circle (3pt);
+}
+\end{scope}
+\begin{scope}[yshift=-250, xshift=-50]
+	\coordinate (C) at (0, 2.5);
+	\draw [->] (0,0) -- (5,0); \draw [->] (0,0) -- (0,5); \fill [opacity=0.1] (0,0) rectangle (5,5);
+	\fill [opacity=0.1] (3,3) rectangle (5,5);
+	\draw (2.5,.5) node {$f_U(u)$};
+\end{scope}
+\begin{scope}[yshift=-250, xshift=200]
+	\coordinate (D) at (5,2.5);
+	\coordinate (E) at (1,1);
+	\draw [->] (0,0) -- (5,0); \draw [->] (0,0) -- (0,5); \fill [opacity=0.1] (0,0) rectangle (5,5);
+	\fill [opacity=0.1] (0,0) rectangle (2,2);
+	\draw (2.5,4.5) node {$f_V(v)$};
+\end{scope}
+
+\draw [ultra thick, accent-red]  (A) edge [out=180, in=180, ->] node [black, fill=white, pos=0.3]  {$f_U$} (C) ;
+\draw [ultra thick, accent-blue]  (B) edge [out=0, in=0, ->] node [black, fill=white, pos=0.4]  {$f_V$} (D);
+
+\draw [ultra thick, accent-green] (C)+(4,1.5) edge [out=0, in=180,->] node [black, fill=white, pos=0.5]  {$f_V \circ f^{-1}_U$} (E);
+\end{tikzpicture}
+\caption{A curve defined over a manifold.}
+  \label{fig:manifold-curve}
+\end{figure}
+
+\section{Curves and Functions on Manifolds}
+\label{sec:curves}
+
+A curve is a differentiable mapping from an open set of $\mathbb{R}^1$
+into $M$, so each point $\lambda$ on the real line is associated with
+a point in $M$.
+
+A function on $M$ is a rule assigning a real number to each point of
+$M$. When a region of $M$ is mapped to $\rn$ the function becomes a
+function of $\rn$. If this is differentiable on $\rn$ it is defined as
+being differentiable on $M$. That is
+\[ g(P \in M) = g(x_1(P), \dots, x_n(P)) = g(x_1, \dots x_n) \]
+
+Now, consider a curve, $c$, which passes through $P \in M$, which is
+described by $x^i = x^i(\lambda)$ for $i \in \set{1, \dots, n}$, and a
+differentiable function $g(x^i)$ on $M$. $g$ has a value at each point
+along the curve, so there is a differentiable function, $g(\lambda)$
+along the curve which gives the value of $c$ at the point with a parameter value $\lambda$,
+\[ g(\lambda) = g(x^1(\lambda), \dots, x^n(\lambda) ) =
+g(x^i(\lambda)) \]
+Differentiating, and applying the chain rule,
+\begin{equation}
+  \label{eq:6}
+  \dv{g}{\lambda} = \dv{x^i}{\lambda} \dv{g}{x^i}
+\end{equation}
+using Einstein notation.
+
+In Euclidean space the set $\set{ \dv*{x^i}{\lambda} }$ would be
+components of a vector tangent to the curve $x_i(\lambda)$, and would
+be the tangent to an infinite number of curves through $P$.
+
+Manifolds do not necessarily have a notion of distance between points,
+so vectors must be defined in terms only of infinitessimal
+neighbourhoods of the points of $M$. 
+
+\section{Vectors}
+\label{sec:vectors}
+
+Suppose $a$ and $b$ are two numbers and $x^i = x^i(\mu)$ is another curve through $P$, then at $P$,
+\[ \dv{\mu} = \dv{x^i}{\mu} \pdv{x^i} \]
+and
+\[ a \dv{\lambda} + b\dv{\mu} = \qty( a \dv{x^i}{\lambda} + b \dv{x^i}{\mu} ) \pdv{x^i} \]
+The numbers inside the bracket are the components of a new vector, tangent to a curve at $P$, so a curve must exist, with parameter $\phi$ such that at $P$,
+\[ \dv{\phi} = \qty( a \dv{x^i}{\lambda} + b \dv{x^i}{\mu} ) \pdv{x^i} \]
+collecting this, at $P$,
+\[ a \dv{\lambda} + b \dv{\mu} = \dv{\phi} \]
+forming a vector space.
+
+In any given coordinate system there are special curves, the
+coordinate lines. The derivations along them are $\pdv*{x^i}$, and
+$\dv*{\lambda}$ has components on the basis, showing that
+$\set{\dv*{x^i}{\lambda}}$ are a basis for a vector space.
+
+\section{Basis Vectors and basis vector fields}
+\label{sec:basis-vectors-basis}
+
+At any point $P$ the space $T_P$ is a vector space with the same
+dimension $n$ as the manifold, and is the tangent space. Any
+collection of linearly independent vectors can form a basis, and if
+there is a coordinate system $\set{x^i}$ in a neighbourhood $U$ of $P$
+then these coordinate define a coordinate basis at all points in $U$.
+
+\begin{definition}[Tangent Vector]
+  Let $M^m$ be a differential manifold, $p$ a point on it, and $U$ be
+  an open neighbourhood of $M$. Let $\epsilon>0$, and $\gamma :
+  (-\epsilon, \epsilon) \to U$ be a differentiable curve on $M$ such
+  that $\gamma(0) = p$. For any differentiable function $f:U \subset M
+  \to \mathbb{R}$ the directional derivative of $f$ along $\gamma$ to
+  be the number
+  \[ D_{\gamma}(f) = \eval{\dv{t}( f (\gamma(t) ) )}_{t=0} \] The
+  operator $D_{\gamma}$ is called the tangent vectorto $\gamma$ at
+  $p$.
+\end{definition}
+\begin{definition}[Tangent Space]
+  The tangent space of $M$ at $p$, $T_p$ is a vector space with the
+  same dimension as the manifold composed of the tangent vectors to
+  the manifold at $p$.
+\end{definition}
+
+At any point $P$ an arbitrary vector $\bar{V}$ is
+\[ \bar{V} = V^i \pdv{x^i} = V^j \bar{e}_j = V^j \partial_j\] for an
+arbitrary basis $\set{\bar{e}_i}$. Thus $\set{V^i}$ are the components
+of $\bar{V}$ in $\set{ \pdv*{x^i}}$, and $\set{V^j}$ the components in
+$\bar{e}_j$, where a useful notation, $\partial_j \equiv \pdv{x^i}$ is
+introduced.
+
+\section{Differential of a Map}
+\label{sec:differential-map}
+
+\begin{definition}[Differential]
+  Let $\phi: M^m \to N^n$ be a differentiable map between
+  differentiable manifolds. We define the differential of $\phi$ at $p
+  \in M$ as the linear transformation between vector spaces
+  \begin{align*}
+    \dt{\phi_p} : T_pM & \to T_{\phi(p)N} \\
+D_{\gamma} &\mapsto D_{\phi \circ \gamma}
+  \end{align*}
+\end{definition}
+
+\section{Fiber Bundles}
+\label{sec:fiber-bundles}
+
+Consider the combination of a manifold $M$ with all of its tangent
+spaces $T_P$. This is equivalent to the set of all vectors at all
+points in the manifold, and can be defined as a new manifold $TM$; a
+\emph{fiber bundle}, with the fibers the spaces $T_P$, and has
+dimension $m+n$, with $m$ the dimension of each fiber, and $n$ of the
+base maniold. An example of a fibre bundle is the structure of space
+and time in the Newtonian world view, where the base space is
+$\mathbb{R}^1$, with $\mathbb{R}^3$ fibers, that is a base of time
+with fibers of space. This follows, as there is no absolute concept of
+space in Newtonian physics, and so there is no connection between
+points on each fiber.
+
+\begin{definition}[Cartesian Product Space]
+A Cartesian product space of two spaces $M$ and $N$, denoted $M \times
+N$ is the set of all ordered pairs $(a,b)$ for $a \in M$ and $b \in
+N$, and if $M$ and $N$ are manifolds then $M \times N$ is also a
+manifold; the set of coordinates $\set{x^i}$ of an open set $U$ of $M$
+taken with $\set{y^i}$ of an open set $V$ of $N$ form a set of $m+n$
+coordiates for the open set $(U,V)$ of $M \times N$.
+\end{definition}
+
+Fiber bundles are locally product spaces; they are locally trivial, as
+they look like product spaces, but not usually globally trivial. For
+example, $TS^2$ is the tangent bundle of a 2-sphere; were it globally
+tivial there would be a diffeomorphism of $TS^2$ onto $S^2 \times
+\mathbb{R}^2$. Consider the set $(P, \bar{V})$ in the product space;
+the invserse map gives a nowhere-zero cross-section of $TS^2$, but a
+vector field must always have a zero, and so $TS^2$ has no global
+product structure. A tangent bundle $TS^1$ \emph{is} identical to $S^1
+\times \mathbb{R}$, but if the circle is cut at a point $P$, and a
+twist is introduced, making a M\"obius strip, the resulting bundle is
+not a product space, as no bijection exists from one bundle onto all
+of the other.
+
+The difference between two bundles over a base space is the bundles'
+\emph{structure group}.
+
+\begin{definition}[Homeomorphism]
+A homeomorphism is an bijection from one space to the other which is
+continuous, and its inverse is continuous.
+\end{definition}
+
+\begin{definition}[Fibre Bundle]
+A fibre bundle is a space, $E$, which has a base manifold $B$, a
+projection $\pi: E \to B$, a typical fibre $F$ a structure group $G$
+of homeomorphisms of $F$ onto iteself, and a family $\set{U_j}$ of
+open sets which cover $B$, which satisfy
+\begin{enumerate}
+\item Locally the bundle is trivial: the bundle over any set $U_j$
+  which is just $\pi^{-1}(U_j)$ has a homeomorphism onto $U_j \times
+  F$. Part of this is a homeomorphism from each fibre, say
+  $\pi^{-1}(x)$, $x\in B$ onto $F$. Call this map $h_j(x)$ labelled
+  both by $x$ defining the fibre, but also by $j$ indexing the set
+  $U_j$ which contains $x$.
+\item When two sets $U_j$ and $U_k$ overlap a point $x$ in their
+  intersection has two homeomorphisms, $h_j(x)$ and $h_k(x)$ from the
+  fibre onto $F$. Thus $h_j(x) \circ h_k^{-1}(x)$ is a homeomorphism
+  of $F$ onto $F$. This must be an element of $G$.
+\end{enumerate}
+\end{definition}
+
+In two overlapping neighbourhoods there are homeomorphisms $h_j(x)$
+and $h_k(x)$ which map $\vec{v}$ to $\alpha_{(j)}$ and to
+$\alpha_{(k)}$, and so the homeomorphism $h_j(x) \circ h_k^{-1}(x): F
+\to F$ maps $\alpha_{(k)} \to \alpha_{(j)}$, which is equivalent to
+multiplication by a real number $r_{jk} = \alpha_{(j)}/a_{(k)}$, which
+must be a non-zero real number. Thus the structure group is
+$\mathbb{R}^1 - \set{0}$, which is a Lie group under multiplication.
+
+If the coordinates $\lambda_j$ can be arranged in such a way that
+$\lambda_j$ and $\lambda_k$ increase in the same direction in $S^1$ in
+the overlap region, then $S^1$ is orientable. In such an overlap all
+$r_{jk}$ are positive, so the structure group becomes $\mathbb{R}^+$,
+and by scaling the coordinates so that $\dv*{\lambda_j}{\lambda_k} =
+1$ in every overlap the group reduces to the identity element, thus
+the structure group is trivial and we have a bundle structure.
+
+\begin{definition}[Tangent Bundle]
+  Let $M^n$ be a differentiable manifold. The disjoint union of all
+  tangent planes to $M$, \[ \coprod_{p \in M} T_p M \] is a vector
+  bundle with the fibre $\rn$ over $M$, called the tangent bundle to
+  $M$, denoted $TM$.
+\end{definition}
+
+\section{Integral Curves}
+\label{sec:vector-fields}
+
+For a $C^1$ vector field there is always a curve which has the field as a tangent at each of its points; these are its integral curves.
+
+Let the components of the field be $V^i(P) = v^i(x^j)$ in a coordinate
+system $\set{x^i}$ The statement that this is a tangent vector to a curve parameterised by $\lambda$ is
+\begin{equation}
+  \label{eq:7}
+  \dv{x^i}{\lambda} = v^i(x^j)
+\end{equation}
+which is a set of first-order ODEs for $x^i(\lambda)$, which always
+has a unique solution in a neighbourood of $P$.
+
+\section{Lie Brackets}
+\label{sec:lie-brackets}
+
+Any linearly independent set of vector fields can serve as a basis,
+but not all come from coordinate systems; all coordinate systems commute, but in general not all vector fields commute, and the commutator,
+\[ \comm{V}{W} = V W - W V \] is a vector field with, in general,
+non-vanishing components. If $W$ and $V$ are elements of a basis they
+cannot be expressed as derivatives with respect to any
+coordinates. The commutator is the Lie Bracket of the two vector
+fields, and shows that the parameterisation of the integral curves of
+these vector fields is not that of a coordinate system.
+
+\begin{definition}[Lie Bracket]
+  Let $X$ and $Y$ be vector fields of class $C^1$, then the Lie
+  Bracket is a vector field, defined by the operation $f \mapsto (XY -
+  YX) f$, and is denoted $\comm{X}{Y}$.
+\end{definition}
+
+The vector $\comm{V}{W}$ can be viusualised as the difference in
+moving a distance $\Delta \lambda = \epsilon$ along the $V$ curve,
+then $\Delta \mu = \epsilon$ along a $W$ curve, ending at a point
+$A$. Going in the opposite order we end at a point $B$. The vector
+between these two points is $\epsilon^2 \comm{V}{W}$.
+
+A Lie Algebra of vector fields on a region $U$ of $M$ is a set $A$ of
+vector fields on $U$ which is a vector space under addition, which is
+closed under the Lie Bracket operation.
+
+For a basis to be a coordinate basis the fields of the basis must commute,
+\[\comm{A}{B} = 0 \]
+
+\begin{figure*}[t]
+  \centering
+  \begin{tikzpicture}[scale=1.4]
+
+\begin{scope}[]
+	\draw [help lines] (0,0) grid (5,5);
+	\draw [thin, ->] (-.2, 0) -- (5.2,0);
+	\draw [thin, ->] (0, -.2) -- (0,5.2); 
+
+	\draw [accent-red, ultra thick, ->] (1,1) -- (4,1) node [left, midway, below, black] {$\partial_\mu$};
+	\draw [accent-red, ultra thick, ->] (1,4) -- (4,4) node [left, midway, above, black] {$\partial_\mu$};
+
+	\draw [accent-blue, ultra thick, ->] (1,1) -- (1,4) node [left, midway, black] {$\partial_\nu$};
+	\draw [accent-blue, ultra thick, ->] (4,1) -- (4,4) node [right, midway, black] {$\partial_\nu$};
+\end{scope}
+
+\begin{scope}[xshift=200]
+ {
+	\clip (-.2,-.2) rectangle (5.5,5.2);
+		\foreach \x in {0,0.55,...,4}{
+		\draw [help lines] (\x-.06, 0) -- (\x+\x-1.2,6);
+	}
+	\foreach \y in {0.3,...,6}{
+		\draw [help lines] (0,\y-0.6) -- (6, \y+1.3);
+	}	
+
+
+	}
+	\draw [thin, ->] (-.2, 0) -- (5,0);
+	\draw [thin, ->] (0, -.2) -- (0,5); 
+
+	\draw [accent-red, ultra thick, ->] (1,1) -- (4,2) node [left, midway, below, black] {$W$};
+	\draw [accent-red, ultra thick, ->] (1,4) -- (4,5) node [left, midway, above, black] {$W$};
+
+	\draw [accent-blue, ultra thick, ->] (1,1) -- (1,4) node [left, midway, black] {$V$};
+	\draw [accent-blue, ultra thick, ->] (4,2) -- (5,5) node [right, midway, black] {$V$};
+\end{scope}
+
+\end{tikzpicture}
+  \caption{A geometrical interpretation of the commutator. In the top diagram are two commuting vector fields, but in the lower diagram the two fields do not commute. Moving a distance $\epsilon$ along $V$ then $\epsilon$ along $W$ does not take us to the same place as moving $\epsilon$ along $W$ and then $\epsilon$ along $V$, so the paths do not meet, with a gap equal to $\epsilon^2\comm{V}{W}$ separating their end points.}
+  \label{fig:commutator}
+\end{figure*}
+
+\section{One-forms}
+\label{sec:one-forms}
+
+Consider $T_P$, the tangent space of vectors at a point $P$. A
+one-form, $\of{\omega}$ at $P$ associates a vector $\vec{V}$ at P to a
+real number, $\of{\omega}(\vec{V})$. 
+
+\begin{subequations}
+This function is linear; for vectors $\vec{V}$ and $\vec{W}$, and real numbers $a$ and $b$,
+\begin{equation}
+\label{eq:8}
+ \of{\omega}( a \vec{V} + b \vec{W} ) = a \of{\omega}(\vec{V}) + b
+\of{\omega}(\vec{W}) 
+\end{equation}
+can be multiplied by scalars,
+\begin{equation}
+  \label{eq:9}
+  (a \of{\omega})(\vec{V}) = a [ \of{\omega}(\vec{V})]
+\end{equation}
+and have the property
+\begin{equation}
+  \label{eq:10}
+  (\of{\omega} + \of{\sigma}) (\vec{V}) + \of{\omega}(\vec{V}) + \of{\sigma}(\vec{V})
+\end{equation}
+\end{subequations}
+They satisfy the axioms of a vector space, and are indeed the duals of vectors, and have a tangent vector space $T^{*}_P$.
+
+A field of one-forms can represent the gradient of a function $f$;
+such a field is denoted $\dd{f}$,
+\[ \of{\dd{}}f (\dv*{\lambda}) = \dv{f}{\lambda} \]
+
+In the vector space $T^{*}_P$ any $n$ linearly independent one-forms
+can constitute a basis, however selecting a set of basis vectors,
+$\set{\vec{e}_i}$ in $T_P$ induces a preferred basis on $T^{*}_P$, the
+dual basis $\set{\of{\omega}^i}$.
+
+These have the property
+\[ \of{\omega}^i(\vec{e}_j) = \delta^i_j \]
+
+\section{Tensors}
+\label{sec:tensors}
+
+\newcommand{\tensororder}[2]{#1 \choose #2}
+
+Consider a point $P$ in a manifold $M$, a \emph{tensor} of type
+$\tensororder{N}{N'}$ at $P$ is a linear function with $N$ one-form
+arguments, and $N'$ vector arguments, which has a real scalar
+value. Tensors are linear on every argument.
+
+A $\tensororder{N}{N'}$ tensor field is a rule which assigns a
+$\tensororder{N}{N'}$ tensor to each point in a space, and are
+functions on $M$.
+
+It is possible to construct higher-order tensors out of lower order
+ones with the tensor (outer) product operation; for two vectors $V$
+and $W$ the tensor product is defined such that
+\begin{equation}
+  \label{eq:11}
+  V \otimes W (\of{p}, \of{q}) := V(\of{p}) W(\of{q})
+\end{equation}
+
+If the basis vectors and one-forms are given as arguments to the
+tensor the components of the tensor are returned.
+
+It is also possible to reduce the dimensionality of a tensor by a
+process called \emph{contraction} whereby an entire argument is
+removed from the tensor by constructing an inner product of those
+parts of the tensor with either a one form or a vector.
+
+\section{Basis Transformations}
+\label{sec:basis-transf}
+
+Consider a point $P$ in a manifold $M$, where a vector basis
+$\set{e_i}$ is defined, but we want to switch to a description in
+another basis, $\set{e_{j'}}$, then in $T_P$ there is a linear
+transformation, $\Lambda$ between the old and the new basis,
+\begin{equation}
+  \label{eq:12}
+  e_{j'} = \Lambda^i_{j'} e_i 
+\end{equation}
+where $\Lambda$ is non-singular, but arbitrary. It is not a tensor,
+since its indices refer to different bases. The transformation matrix has an inverse, $\Lambda^{k'}_j$ such that
+\[ \Lambda^{k'}_j \Lambda^j_i = \delta^{k'}_{i'} \] We require the
+inverse transformation for basis one-forms, as is evident from the
+relation
+\[ \of{\omega}^i e_{j'} = \delta^{i}_{k} \Lambda^k_{j'} =
+\Lambda^i_{j'} \]
+
+The general expression for the change of coordinates of a tensor takes
+the form
+\begin{equation}
+  \label{eq:71}
+  \tensor{A'}{^{u_1\dots u_l}_{r_1 \dots r_m}} = \Lambda_{t_1}^{u_1} \cdots \Lambda_{t_l}^{u_l} \Lambda_{r_1}^{q_1} \cdots \Lambda_{r_m}^{q_m} \tensor{A}{^{t_1 \dots t_l}_{q_1 \dots q_m}}
+\end{equation}
+
+\section{The Metric Tensor}
+\label{sec:metric-tensor}
+
+The metric tensor is a linear function defining the inner product of two vectors, such that
+\begin{equation}
+  \label{eq:13}
+  g(V,U) = g(U,V) := U \vdot V
+\end{equation}
+where $g$ is the symmetric non-singular metric tensor, with components
+in the basis $\set{e_i}$ being
+\begin{equation}
+  \label{eq:14}
+  g_{ij} = e_i \vdot e_j
+\end{equation}
+The Euclidean metric is defined such that
+\[ g_{ij} = \delta_{ij} \]
+We can always form a metric, given transformations of the Cartesian basis,
+\[ g_{i' j'} = \Lambda^k_{i'} g_{kl} \Lambda^l_{j'} \]
+This can be reduced to an equation of the form
+\[ g' = D O^{-1} g OD \] thanks to the existance of a theorem allowing
+us to express any matrix as a product of an orthogonal matrix, $O$ and
+a diagonal one, $D$. 
+
+From this we can see that orthogonal matrices compose the set of
+transformations between arbitrary Cartesian bases; they form a
+continuous group, $O(n)$, which is the Euclidean symmetry group.
+
+The Minkowski metric, with $g = \diag(-1, 1, 1, 1)$, also has
+transformation matrices which form the Lorentz group, $L(n)$.
+
+Some additional properties of the metric tensor are:
+\begin{equation}
+  \label{eq:15}
+  \tensor{g}{^{ij}} \tensor{g}{_{jk}} = \delta^i_k
+\end{equation}
+and since $g^{ki} V_i = g^{ki} g_{ij} V^j = \delta^k_j V^j = V^k$, 
+\begin{subequations}
+  \begin{equation}
+    \label{eq:16}
+    V_i = g_{ij} V^j
+  \end{equation}
+  \begin{equation}
+    \label{eq:17}
+    v^j = g^{jk} V_k
+  \end{equation}
+\end{subequations}
+allowing the metric tensor to act as an index raising and lowering
+operator.
+
+Defining a $\tensororder{0}{2}$ tensor on a manifold $M$ provides a
+rich structure, and allow definitions of quantities such as distance
+and curvature.
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "../project"
+%%% End: 

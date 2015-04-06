@@ -1,0 +1,123 @@
+\section{Orthogonal Metrics}
+\label{sec:orthogonal-metrics}
+
+An orthogonal metric takes the form
+\begin{equation}
+  \label{eq:78}
+  \tensor{g}{_{\alpha \beta}} = 0 \qquad\forall\alpha \neq \beta
+\end{equation}
+implying that there are no cross-terms in the invariant interval. Thus
+\begin{equation}
+  \label{eq:79}
+  \dd{s}^2 = \tensor{g}{_{\alpha \alpha}} (\dd{x}^{\alpha})^2
+\end{equation}
+The components of a metric will not be orthogonal in every coordinate
+system; suppose that $\tensor{g}{_{\alpha \beta}}$ are the metric
+components in a particular coordinate system where the metric is
+orthogonal. Let $\tensor{g'}{_{\mu \nu}}$ be the components of the
+metric in another coordinate system, then
+\newcommand{\notimplies}{%
+  \mathrel{{\ooalign{\hidewidth$\not\phantom{=}$\hidewidth\cr$\implies$}}}}
+\begin{subequations}
+\begin{align}
+  \label{eq:80}
+  \tensor{g'}{_{\mu \nu}} &= \pdv{x^{\alpha}}{x'^{\mu}} \pdv{x^{\beta}}{x'^{\nu}} \tensor{g}{_{\alpha \beta}} \\
+&= \pdv{x^{\alpha}}{x'^{\mu}} \pdv{x^{\alpha}}{x'^{\nu}} \tensor{g}{_{\alpha \alpha}} \\
+\notimplies \tensor{g'}{_{\mu \nu}} &= 0 \qquad \forall \mu' \neq \nu'
+\end{align}
+\end{subequations}
+The orthogonal metric components are closely related to the question
+of whether the coordinate system has orthogonal basis vectors.  If we
+have a coordinate system with basis vectors $\set{\vec{e}_i}$, and two
+vectors $\vec{A} = A^i \vec{e}_i$, $\vec{B} = B^i \vec{e}_i$, then
+\[ \vec{A} \vdot \vec{B} = (A^i \vec{e}_i) \vdot (B^j \vec{e}_j) = A^i B^j (\vec{e}_i \vdot \vec{e}_j) \]
+so it follows
+\[ \tensor{g}{_{ij}} = \vec{e}_i \vdot \vec{e}_j \] and
+$\tensor{g}{_{ij}} = 0$ iff $\vec{e}_i$ and $\vec{e}_j$ are
+orthogonal.
+
+We normally want to choose a coordinate system in which the metric
+coefficients are orthogonal, to simplify the expressions for
+geometrical objects; if the contravariant metric components are
+orthogonal then the diagonal terms are simply the reciprocal of the
+covariant diagonal terms. To see this, we know
+\begin{equation*}
+  g^{\gamma \beta} g_{\gamma\gamma} = \delta^{\beta}_{\gamma}
+\end{equation*}
+and so
+\begin{equation*}
+  g^{\gamma\gamma} = \frac{1}{g_{\gamma \gamma}}
+\end{equation*}
+The Christoffel symbols also take a simple form in an orthogonal
+metric,
+\begin{subequations}
+  \begin{align}
+    \label{eq:109}
+    \Gamma^{\lambda}_{\mu \nu} &= 0 \qquad \text{for } \lambda, \mu, \nu \text{ all different.} \\
+\Gamma^{\lambda}_{\lambda \mu} = \Gamma^{\lambda}_{\mu \lambda} &= \quad \frac{g_{\lambda\lambda , \lambda}}{2 g_{\lambda \lambda}}\\
+\Gamma^{\lambda}_{\mu \mu} &= - \frac{g_{\mu \mu, \lambda}}{2 g_{\lambda \lambda}} \\
+\Gamma^{\lambda}_{\lambda \lambda} &= \quad \frac{g_{\lambda \lambda, \lambda}}{2 g_{\lambda \lambda}}
+  \end{align}
+\end{subequations}
+
+For an affine parameter $s$ the geodesic equation takes the form
+\begin{equation*}
+  \dv{s} \qty( g_{\lambda \nu} \dv{x^{\nu}}{s} ) - \half \pdv{g_{\mu \nu}}{x^{\lambda}} \dv{x^{\mu}}{s} \dv{x^{\nu}}{s} = 0
+\end{equation*}
+for an orthogonal metric this reduces to
+\begin{equation}
+  \label{eq:112}
+  \dv{s} \qty( g_{\lambda \lambda} \dv{x^{\lambda}}{s} ) - \half 
+         \pdv{g_{\mu \mu}}{x^{\lambda}} \qty( \dv{x^{\mu}}{s} )^2 = 0
+\end{equation}
+
+\section{Spherically symmetric metrics}
+\label{sec:spher-symm-matr}
+
+Spherically symmetric solutions to the field equations are suitable
+for describing the spacetime inside and around stars. In flat
+Minkowski spacetime a polar coordinate system can be used to give an
+invariant interval
+\begin{equation}
+  \label{eq:115}
+  \dd{s}^2 = - \dd{t}^2 + \dd{r}^2 + r^2 \qty( \dd{\theta}^2 + \sin^2{\theta} \dd{\phi}^2 )
+\end{equation}
+Surfaces of constant $r$ and $t$ have the geometry of a 2-sphere with
+an interval
+\begin{equation}
+  \label{eq:116}
+  \dd{\ell}^2 = r^2 \qty( \dd{\theta}^2 + \sin^2{\theta} \dd{\phi}^2 )
+\end{equation}
+Thus a spacetime is spherically symmetric if every point in the
+spacetime lies on a 2D surface which is a 2-sphere. Labelling the
+coordinates $(r', t, \theta, \phi)$ then every point in a spherically
+symmetric spacetime lies on a 2D surface, given by
+\begin{equation}
+  \label{eq:117}
+  \dd{\ell}^2 = f(r', t) \qty[ \dd{\theta}^2 + \sin^2{\theta} \dd{\phi}^2]
+\end{equation}
+with $\sqrt{f}$ the radius of curvature of the 2-sphere.
+
+In curved spacetime there is no trivial relation between the angular
+coordinates of the two-sphere and the remaining coordinates at each
+point in spacetime, but if we define
+\begin{equation}
+  \label{eq:118}
+  r^2  = f(r', t)
+\end{equation}
+and we can line-up the origins of the 2-sphere coordinate systems
+$(\theta, \phi)$ for points in spacetime with different values of
+$r$. Spherical symmetry requires that any radial path in the space is
+orthogonal to the 2D spheres on which the points along the radial path
+lie, implying
+\begin{equation}
+  \label{eq:119}
+  g_{r \theta} = g_{r \phi} = 0
+\end{equation}
+
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "../project"
+%%% End: 

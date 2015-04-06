@@ -1,0 +1,156 @@
+
+\section{Parallelism on curved surfaces}
+\label{sec:parall-curv-surf}
+
+A differentiable manifold has no concept of parallelism between
+vectors defined at two points. An affine connection provides a rule to
+provide such a concept. Consider transporting a vector across the
+surface of a sphere from a pole to the equator, keeping it tangent to
+the sphere at all times, without rotating it as it is
+transported. Then transporting the vector 90 degrees around the
+equator, and returning to the pole, we find the vector rotated by 90
+degrees; clearly there is no global concept of parallelism. So we
+define a rule for conducting this transport in a parallel fashion.
+
+\section{Covariant Derivative}
+\label{sec:covariant-derivative}
+
+Suppose we have a curve, $C$, and a connection. The tangent to $C$ is
+$U = \dv{\lambda}$, and we have a vector $V$ from the tangent space
+$T_P$ at $P$. By parallel-transporting $V$ along the curve we generate
+a new vector field, and as this does not change along the curve, the
+curve's derivative with respect to the field is zero, so
+\begin{equation}
+  \label{eq:41}
+  \nabla_U V = 0
+\end{equation}
+If $W$ is a vector field defined everywhere along $C$ then its
+covariant derivative can be defined in a similar way to Lie
+derivatives, 
+\begin{equation}
+  \label{eq:42}
+  ( \nabla_U W)_P = \lim_{\epsilon \to 0} \frac{W_{\lambda_0 + \epsilon}(\lambda_0) - W(\lambda_0)}{\epsilon}
+\end{equation}
+where $W_{\lambda_0+\epsilon}$ is the parallel transported field which
+equals $W$ at the point $\lambda_0+\epsilon$. The operation of
+transportation is not the same as the dragging-back of the Lie
+derivative, which requires the whole congruence, and not just the
+curve. The $\nabla_U$ object is a differential operator:
+\begin{subequations}
+\begin{equation}
+  \label{eq:43}
+  \nabla_U (fW) = f \nabla_U W + W \nabla_U f = f \nabla_U W + W \dv{f}{\lambda}
+\end{equation}
+It can be extended to tensors of arbitrary type by the Leibniz rules,
+\begin{equation}
+  \label{eq:44}
+  \nabla_U (A \otimes B) = (\nabla_U A) \otimes B + A \otimes (\nabla_U B)
+\end{equation}
+\begin{equation}
+  \label{eq:45}
+  \nabla_U \langle \of{\omega}, A \rangle = \langle \nabla_U \of{\omega}, A \rangle + \langle \of{\omega}, \nabla_U A \rangle
+\end{equation}
+\end{subequations}
+
+Now suppose the parameter along the curve is changed from $\lambda$ to
+$\mu$, so the new tangent is $gU$, for $g = \dv{\lambda}{\mu}$, then
+\begin{subequations}
+\begin{equation}
+  \label{eq:46}
+  \nabla_{gU} W = g \nabla_U W
+\end{equation}
+We also require
+\begin{equation}
+  \label{eq:47}
+(\nabla_U W)_P +(\nabla_V W)_P = (\nabla_{U+V} W)_P
+\end{equation}
+\end{subequations}
+The fact that $\nabla W$ is a tensor field---the gradient of $W$
+allows the curve can be removed from the definition of the covariant
+derivative.
+
+\section{Covariant derivatives of a basis}
+\label{sec:covar-deriv-basis}
+
+Any tensor may be described as a linear combination of basis tensors,
+which can be derived from basis vectors, and the connection can be
+retrieved from knowledge of the gradients of the basis vectors, so we
+define
+\begin{equation}
+  \label{eq:48}
+  \nabla_{e_i} e_j = \tensor{\Gamma}{^k_{ji}} e_k
+\end{equation}
+with the symbol $\tensor{\Gamma}{^k_{ji}}$ the Christoffel symbols;
+for fixed $(i,j)$ this is the $k$th component of the vector field
+$\nabla_i e_j$, defining $\nabla_i \equiv \nabla_{e_i}$. These
+completely determine the connection, although are not the components
+of a tensor.
+
+Knowing the derivatives of the basis vectors, for an arbitrary tensor, with $U=\dv{\lambda}$, then
+\begin{equation}
+  \label{eq:49}
+  \nabla_U V = U^i \nabla_{e_i}(V^j e_j) = U^i( \nabla_{e_i} V^j )e_j + U^i V^j \nabla_{e_i} e_j
+\end{equation}
+given that $V^j$ is a function, $U^i \nabla_i (V^j) =
+\dv{V^j}{\lambda}$, so
+\begin{equation}
+  \label{eq:50}
+  \nabla_U V = \dv{V^j}{\lambda} e_j + U^i V^j \tensor{\Gamma}{^k_{ji}}e_k = \qty( \dv{V^j}{\lambda} + \tensor{\Gamma}{^j_{ki}} V^k U^i ) e_j
+\end{equation}
+If $e_i = \dv{\mu}$ then $\nabla_i (V^j) = \dv{V^j}{\mu}$, with $V^j$
+function along the curve with parameter $\mu$, if $e_i = \pdv{x^i}$ is
+a coordinate vector, then
+\begin{equation}
+  \label{eq:51}
+  \nabla_i V^j = \pdv{x^i} V^j = \tensor{V}{^j_{,i}}
+\end{equation}
+which introduces the comma notation for forms. Likewise we can
+introduce the semicolon notation for a covariant derivative,
+\begin{equation}
+  \label{eq:52}
+  \tensor{(\nabla V)}{^j_i} = \tensor{V}{^j_{,i}} + \tensor{\Gamma}{^j_{ki}} V^k = \tensor{V}{^j_{;i}}
+\end{equation}
+
+\section{Torsion}
+\label{sec:torsion}
+
+A connection is symmetric if the quantities $\comm{U}{V}$ and
+$\nabla_UV - \nabla_V U$ are equal.
+\[ \comm{U}{V} = \nabla_U V- \nabla_V U \]
+
+For a non-symmetric connection we can define the torsion,
+\begin{equation}
+  \label{eq:53}
+  \tensor{T}{^k_{ji}} e_k = \nabla_{e_j} e_j - \nabla_{e_j} e_i - \comm{e_i}{e_j}
+\end{equation}
+
+The symmetric part of the connection can be defined for any
+connection:
+\begin{equation}
+  \label{eq:54}
+  \tensor{\Gamma}{^k_{\rm (S)}_{ij}} = \tensor{\Gamma}{^k_{ij}} - \half \tensor{T}{^k_{ij}}
+\end{equation}
+
+\section{Geodesics}
+\label{sec:geodesics}
+
+A geodesic is a curve which parallel transports its own tangent
+vector. The geodesic equation is 
+\begin{equation}
+  \label{eq:55}
+  \nabla_U U = 0
+\end{equation}
+For $\lambda$ the parameter of the curve, and $\set{x^i}$ a coordinate system this becomes
+\begin{equation}
+  \label{eq:56}
+  \dv{U^i}{\lambda} + \tensor{\Gamma}{^i_{jk}} U^j U^k = \dv[2]{x^i}{\lambda} + \tensor{\Gamma}{^i_{jk}} \dv{x^j}{\lambda} \dv{x^k}{\lambda} = 0
+\end{equation}
+If the parameter of a curve is changed from $\lambda$ to $\mu = a
+\lambda +b$, for $a$, $b$ constants, we find the parameter $\mu$ is
+also a solution of the geodesic equation, and so a geodesic's
+paramater is \emph{affine}.
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "../project"
+%%% End: 
