@@ -127,9 +127,158 @@ This has the form of a wave equation.
 \section{Plane wave solutions}
 \label{sec:plane-wave-solutions}
 
+The simplest solutions to a wave equation are plane waves, which in
+this case will take the form
+\begin{equation}
+  \label{eq:17}
+  \bar{h}_{\mu \nu} = \Re\qty(A_{\mu \nu} \exp( i k_\alpha x^{\alpha}) )
+\end{equation}
+for $A_{\mu \nu}$ the amplitude of the waves, and $k_{\alpha}$ the
+wavevector. $A_{\mu \nu}$ is a symmetric tensor, by fortune of
+$\bar{h}_{\mu \nu}$ being symmetric, and this reduces the 16 distinct
+components to 10. Next we have
+\begin{equation}
+  \label{eq:18}
+  \tensor{\bar{h}}{_{\mu \nu, \alpha}^{,\alpha}} = \eta^{\alpha \sigma} \bar{h}_{\mu \nu, \alpha \sigma} = 0
+\end{equation}
+and so \[ k^{\alpha} k_{\alpha} = 0 \] Thus the wavevector is
+null. The frequency is
+\[ \omega = k^t = \qty( k_x^2 + k_y^2 + k_z^2)^{\half} \]
+We also have a Lorentz gauge condition,
+\[ \tensor{\bar{h}}(^{\mu \alpha}_{, \alpha} = \qty(\bar{h}_{\mu}^{\alpha})_{, \alpha} = 0 \]
+thus
+\begin{equation}
+  \label{eq:19}
+  A_{\mu \alpha} k^{\alpha} = 0
+\end{equation}
+So the wave amplitudes are orthogonal to the wavevector. These are
+four equations, so we reduce from ten to six amplitude components. We
+can then introduce a gauge fix to remove further terms,
+\[ h_{\mu \nu}^{\text{new}} = h_{\mu \nu}^{\text{old}} - \xi_{\mu,\nu} - \xi_{\nu,\mu} \]
+Such that
+\begin{equation}
+  \label{eq:20}
+  G_{\mu \nu} = h^{\text{new}, \alpha}_{\mu \nu,\alpha}
+\end{equation}
+This transformation requires vector components which satisfy
+\begin{equation}
+  \label{eq:21}
+  \qty( - \pdv[2]{t} + \nabla^2 ) \xi^{\mu} = \tensor{\bar{h}}{^{\text{old} \mu \nu}_{, \nu}}
+\end{equation}
+This doesn't define $\xi^{\mu}$ uniquely, and we can still add new
+vector quantities to this, provided the same relations hold. This has
+given another four equations, and so the number of free parameters in
+the amplitude is now just two.
+
+If we restrict the form of $A_{\mu \nu}$ to satisfy
+\begin{equation}
+  \label{eq:22}
+  A^{\mu}^{\mu} = \eta^{\mu \nu} A_{\mu \nu} = 0, \quad A_{\alpha \beta}u^{\beta} = 0
+\end{equation}
+then the gauge choice is that of the Transverse-Traceless gauge. In a
+background Lorentz frame with $u^{\beta} = \delta_t^{\beta}$ this
+implies $A_{\alpha t} = 0 \ \forall \alpha$.
+
+If the spatial axes are oriented so that the wave travels in the
+positive $z$-direction then
+\[ A_{\alpha z} = 0 \ \forall \alpha \]
+and so
+\begin{equation}
+  \label{eq:23}
+  \trt{\bar{h}}_{\mu \nu} = \trt{A}_{\mu \nu} \cos[ \omega(t-z) ]
+\end{equation}
+Thus
+\begin{equation}
+  \label{eq:24}
+  \trt{h}_{\mu \nu} = \trt{B}_{\mu \nu} \cos[ \omega(t-z) ]
+\end{equation}
+where $\ten{B}$ has constant components.
+
+The implications of all of the reductions are that in the TT gauge the
+amplitude takes the form
+\begin{equation}
+  \label{eq:25}
+  \trt{A}_{\mu \nu} =
+  \begin{bmatrix}
+     0 & 0      & 0       & 0 \\
+0      & A_{xx} & A_{xy}  & 0 \\
+0      & A_{xy} & -A_{xx} & 0 \\
+0      & 0      & 0       & 0
+  \end{bmatrix}
+\end{equation}
+
 \section{Free particles}
 \label{sec:free-particles}
 
+Consider a background Lorentz frame where a particle is initially at
+rest, and the TT gauge is chosen. The particle has a geodesic
+trajectory given by
+\[ \dv{u^{\beta}}{\tau} + \Gamma^{\beta}_{\mu \nu} u^{\mu} u^{\nu} = 0 \]
+The initial acceleration of the particle is then
+\[ \qty( \dv{u^{\beta}}{\tau})_0 = - \Gamma^{\beta}_{tt} = -\half \eta^{\alpha \beta} (h_{\alpha t,t + h_{t \alpha, t} - h_{t t, \alpha}} )\]
+But in the TT gauge $A_{\alpha t}=0$, so $\bar{h}_{\alpha t} = 0$, and $A_{\mu}^{\mu} = 0$, so $\bar{h} = \bar{h}_{\mu}^{\mu} = 0$, so $h_{\alpha t} = 0 \ \forall \alpha$. Thus
+\[ \qty( \dv{u^{\beta}}{\tau})_0 = 0 \] Thus a particle initially at
+rest stays at rest. Instead consider the proper distance, between
+particles at $x=0$ and $x=\epsilon$.
+
+\begin{equation*}
+  \label{eq:26}
+  \Delta \ell = \int \abs{ g_{\alpha \beta} \dd{x^{\alpha}} \dd{x^{\beta}}}^{\half} = \int_0^{\epsilon} \abs{g_{xx}}^{\half} \approx \epsilon \sqrt{g_{xx}(x=0)} 
+\end{equation*}
+Thus
+\begin{equation}
+  \label{eq:27}
+  \Delta \ell \approx \qty[ 1 + \half \trt{h}_{xx} (x=0)] \epsilon
+\end{equation}
+Thus a passing gravitational wave produces a change in the proper
+distance between test particles.
+
+Now consider the geodesic deviation. Let $\xi^{\alpha}$ be the vector
+connecting the test particles, then for a weak field
+\begin{equation}
+  \label{eq:28}
+  \pdv[2]{\xi^{\alpha}}{t} = R^{\alpha}_{\mu \nu \beta} u^{\mu} u^{\nu} \xi^{\beta}
+\end{equation}
+The particles are initially at rest, so $u^{\mu} = (1,0,0,0)$ and
+$\xi^{\beta} = (0, \epsilon, 0, 0)$. Thus
+\begin{equation}
+  \label{eq:29}
+  \pdv[2]{\xi^{\alpha}}{t} = \epsilon R^{\alpha}_{ttx} = - \epsilon R^{\alpha}_{txt}
+\end{equation}
+The RC tensor is then
+\begin{subequations}
+  \begin{align}
+    R^x_{txt} &= \eta^{xx} R_{xtxt} = - \half \trt{h}_{xx,tt} \\
+R^y_{txt} &= \eta^{yy} R_{ytxt} = - \half \trt{h}_{xy,tt}
+  \end{align}
+\end{subequations}
+Thus
+\begin{subequations}
+\begin{align}
+  \label{eq:30}
+  \pdv[2]{t} \xi^x &= \half \epsilon \pdv[2]{t} {\trt{h}_{xx}} \\
+\pdv[2]{t} \xi^y &= \half \epsilon \pdv[2]{t} \trt{h}_{xy}
+\end{align}
+\end{subequations}
+
+If we assemble a ring of test particles we can measure the
+polarisation of a gravitational wave. Say we now assemble the test
+particles at $x = \epsilon \cos(\theta)$ and at $y = \epsilon
+\sin(\theta)$, then
+\begin{subequations}
+  \begin{align}
+    \pdv[2]{t} \xi^x &= \half \epsilon \cos(\theta) \pdv[2]{t} \trt{h}_{xx} + \half \epsilon \sin(\theta) \pdv[2]{t} \trt{h}_{xy} \\
+\pdv[2]{t} \xi^y &=  \half \epsilon \cos(\theta) \pdv[2]{t} \trt{h}_{xy} - \half \epsilon \sin(\theta) \pdv[2]{t} \trt{h}_{xx}
+  \end{align}
+\end{subequations}
+The solutions to these equations take the form
+\begin{subequations}
+  \begin{align}
+    \xi^x &= \epsilon \cos(\theta) \qty( 1 + \half \trt{B}_{xx} \cos(\omega t)) + \half \epsilon \sin(\theta) \trt{B}_{xy} \cos(\omega t) \\
+\xi^y &= \epsilon \sin(\theta) \qty( 1 - \half \trt{B}_{xx} \cos(\omega t) ) + \half \epsilon \cos(\theta) \trt{B}_{xy} \cos(\omega t)
+  \end{align}
+\end{subequations}
+These describe the equations of ellipses.
 \section{Gravitational wave amplitude}
 \label{sec:grav-wave-ampl}
 
