@@ -278,14 +278,80 @@ The solutions to these equations take the form
 \xi^y &= \epsilon \sin(\theta) \qty( 1 - \half \trt{B}_{xx} \cos(\omega t) ) + \half \epsilon \cos(\theta) \trt{B}_{xy} \cos(\omega t)
   \end{align}
 \end{subequations}
-These describe the equations of ellipses.
+These describe the equations of ellipses. As a wave passes by the
+circular ring of test particles it deforms it into an ellipse, and
+then back.
+
+\begin{figure}[h]
+  \centering
+  \input{figures/gravitational-ellipse}
+  \caption{The polarisations of gravitational radiation. On the left
+    $B_{xy} = 0$, and on the right $B_{xx} = 0$, producing the $+$ and
+    $\times$ polarisation states.}
+  \label{fig:polarisation}
+\end{figure}
+
+Gravitational radiation has two distinct polarisation states which are
+illustrated in figure \ref{fig:polarisation}, and from this it is
+clear that gravitational radiation is invariant under a 180 degree
+rotation around its direction of propagation, compared to the 360
+degree rotation for electromagnetic radiation, or the 720 degree
+rotation. This can be understood in terms of the gauge bosons of the
+fields.
+
+In general, the classical radiation field of a particle with spin $S$
+is invariant under a rotation of $360^{\circ}/S$. A photon has spin
+$S=1$, so clearly a graviton must be spin $S=2$.
+
 \section{Gravitational wave amplitude}
 \label{sec:grav-wave-ampl}
+
+We always expect the received gravitational radiation at the earth to
+have a very small amplitude, thanks to the inverse square
+relationship, even if the metric where it was produced was a strong
+field metric. In such a situation $\abs{h_{\alpha \beta}}\sim 1$,
+close to the source, when $r \sim M$, but at any distance $r$,
+\begin{equation}
+  \label{eq:32}
+  \abs{H_{\alpha \beta}} \sim \frac{M}{R}
+\end{equation}
+Even the formation of a blackhole in the Andromeda Galaxy would only produce perturbations around 
+\[ h_{\alpha \beta} \sim 6\e{-19} \] (and even this is a severe
+over-estimate). Hence, detecting gravitational radiation is a severe
+technological challenge.
+
 
 \section{Quadrupolarity}
 \label{sec:quadrupolarity}
 
+In electromagnetic theory the dominant form of radiation is produced
+by electric dipole radiation, where the luminosity output has the form
+\begin{equation}
+  \label{eq:33}
+  L~{ed} \propto e^2 \vec{a}^2 \propto e^2
+\end{equation}
+for an acceleration of $\vec{\alpha}$ and distance $\vec{d}$ between
+two particles of charge $e$. This is proportional to the second time
+derivative of the magnetic dipole moment, 
+\[ L~{ed} \propto \ddot{\mu} \]
 
+In gravitation the equivalent of the electric dipole is the mass
+dipole, and the mass dipole moment is
+\begin{equation}
+  \label{eq:34}
+  \vec{d} = \sum_{A_i} m_i \vec{x}_i
+\end{equation}
+for $m_i$ the rest mass, and $\vec{x}_i$ the position of the $i$th
+particle. The total linear momentum, $\vec{p}$, is then
+\begin{equation}
+  \label{eq:35}
+  \vec{p} = \vec{d} - \sum_i m_i \vec{x}_i
+\end{equation}
+Total linear momentum is conserved, so there cannot be mass dipole
+radiation from any source. The magnetic dipole corresponds to the
+total angular momentum, and this too is conserved, so the mass dipole
+has zero luminosity. Quadrupole radiation is the lowest order form
+possible.
 
 %%% Local Variables: 
 %%% mode: latex

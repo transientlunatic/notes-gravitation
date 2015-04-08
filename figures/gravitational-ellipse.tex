@@ -1,0 +1,23 @@
+\begin{tikzpicture}
+  \begin{axis}[ height=4cm, width=4cm, axis equal, samples=100, xticklabels={}, yticklabels={}]
+    %\addplot [domain=0:360, variable=\t, thick, gray ] ({cos(t)}, {sin(t)});
+
+    \foreach \a in {-180,-140,...,180}{
+    \addplot [domain=0:360, variable=\t, thick, muted-blue] ({cos(t)*(1+0.4*cos(\a)) }, {sin(t)*(1-0.4*cos(\a))});
+                                                     };
+  \end{axis}
+\end{tikzpicture}
+\begin{tikzpicture}
+\begin{axis}[ height=4cm, width=4cm, axis equal, samples=100, xticklabels={}, yticklabels={}]
+    %\addplot [domain=0:360, variable=\t, thick, gray ] ({cos(t)}, {sin(t)});
+
+    \foreach \a in {0,40,...,360}{
+    \addplot [domain=0:360, variable=\t, thick, muted-green] 
+    ({cos(t) + 0.5*sin(t)*0.4*cos(\a) }, {sin(t) +0.5*cos(t)*0.4*cos(\a) });
+                                                     };
+  \end{axis}
+\end{tikzpicture}
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "../project"
+%%% End: 
