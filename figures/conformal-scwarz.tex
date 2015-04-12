@@ -1,0 +1,61 @@
+ \begin{tikzpicture}[scale=0.5]
+\tikzset{help lines/.style={draw = gray!20}}
+\begin{scope}
+   \begin{axis}[mark=none, xmin=-90, xmax=90, 
+                           ymin=-90, ymax=90, 
+                           anchor=origin, height=10cm, width=10cm,
+                           xlabel=$U$, ylabel=$V$,
+                           axis lines=none]
+     \foreach \u in {-0.5, -0.375, ..., 0.5}{
+       \addplot[mark=none, help lines, domain=-79:79]{atan(\u - tan(x))  +  atan(\u + tan(x)) };
+       }
+   \end{axis}
+   \begin{axis}[mark=none, xmin=-90, xmax=90, 
+                           ymin=-90, ymax=90, 
+                           anchor=origin, height=10cm, width=10cm,
+                           xlabel=$U$, ylabel=$V$,
+                           axis lines=none,
+                           rotate around={-90:(axis cs:0,0)},
+                           ]
+     \foreach \u in {-0.5, -0.375, ...,0.5}{
+       \addplot[mark=none, help lines, domain=-79:79]{atan(\u - tan(x))  +  atan(\u + tan(x)) };
+       }
+       \clip [thick] (axis cs: -80,0)--(axis cs: 0, 80)--(axis cs: 80,0)--(axis cs:0,-80)--cycle;
+       \draw [ultra thick] (axis cs: -80,0)--(axis cs: 0, 80)--(axis cs: 80,0)--(axis cs:0,-80)--cycle;
+   \end{axis}
+ \end{scope}
+\begin{scope}[xshift=7.5cm, anchor=origin]
+   \begin{axis}[mark=none, xmin=-90, xmax=90, 
+                           ymin=-90, ymax=90, 
+                           anchor=origin, height=10cm, width=10cm,
+                           xlabel=$U$, ylabel=$V$,
+                           axis lines=none]
+     \foreach \u in {-0.5, -0.375, ..., 0.5}{
+       \addplot[mark=none, help lines, domain=-79:79]{atan(\u - tan(x))  +  atan(\u + tan(x)) };
+       }
+
+   \end{axis}
+   \begin{axis}[mark=none, xmin=-90, xmax=90,
+                           ymin=-90, ymax=90, 
+                           anchor=origin, height=10cm, width=10cm,
+                           xlabel=$U$, ylabel=$V$,
+                           axis lines=none,
+                           rotate around={-90:(axis cs:0,0)},
+                           ]
+     \foreach \u in {-0.5, -0.375, ...,0.5}{
+       \addplot[mark=none, help lines, domain=-79:79]{atan(\u - tan(x))  +  atan(\u + tan(x)) };
+       }
+       \draw [ultra thick] (axis cs: -80,0)--(axis cs: 0, 80)--(axis cs: 80,0)--(axis cs:0,-80)--cycle;
+   \end{axis}
+ \end{scope}
+ \draw [pattern=north west lines, pattern color=gray!50]  (0,3.75) to  (7.5,3.75) to (3.75, 0) -- cycle ;
+ \draw [pattern=north east lines, pattern color=gray!50]  (0,-3.75) to  (7.5,-3.75) to (3.75, 0) -- cycle ;
+\draw [ultra thick] (0,-3.75) -- (7.5,-3.75); \draw [ultra thick] (0,3.75) -- (7.5,3.75); 
+\draw (3.75,-4.1) node {$r=0$}; \draw (3.75,4.1) node {$r=0$};
+\draw (7.9, 4.1) node {$i^+$}; \draw (7.9, -4.1) node {$i^-$}; \draw (11.8, 0) node {$i^0$};
+\draw (10.5, 2) node {$\mathcal{I}^+$}; \draw (10.5, -2) node {$\mathcal{I}^-$};
+\end{tikzpicture}
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "../project"
+%%% End: 

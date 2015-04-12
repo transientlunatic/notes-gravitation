@@ -1,0 +1,273 @@
+
+\section{Beyond white dwarfs and neutron stars}
+\label{sec:beyond-white-dwarfs}
+
+Is it always justified to assume that the centre of a star has a
+finite pressure and density? Degenerate remnants represent a class of
+objects where the central pressure is only maintained by quantum
+degeneracies; what happens if the gravitational collapse is capable of
+overbalancing these? This becomes a problem if the coordinate radius
+of the star satisfies $r=2M$, at the Schwarzschild surface. At this
+point the Schwarzschild metric misbehaves.
+
+\section{The Schwarzschild surface}
+\label{sec:schw-surf}
+
+In order to understand the misbehaviour of the metric when $g_{rr} =
+2M$, and whether this is a physical problem with spacetime, or a
+coordinate problem, we can consider a particle falling across the
+$r=2M$ surface. Suppose the particle starts at a coordinate radius
+$R>2M$, and is released at a coordinate time $t=0$, and proper time
+$\tau=0$ in the particle's rest frame. Then
+\[ \qty( \dv{r}{\tau} )^2 = k^2 - 1 - \frac{h^2}{r^2} + \frac{2M}{r} \qty( 1+ \frac{h^2}{r^2}) \]
+and
+\[ \dv{\phi}{\tau} = \frac{h}{r^2} \]
+For a radial trajectory $h=0$, and 
+\[ \qty( \dv{r}{\tau})^2 = k^2 -1 + \frac{2M}{r} \]
+and as it is initially at rest,
+\[ k^2-1=- \frac{2M}{R} \implies \qty( \dv{r}{\tau})^2 = \frac{2M}{r}-\frac{2M}{R}   \]
+Given that the particle is falling inwards,
+\[ \dd{\tau} = - \frac{\dd{r}}{\sqrt{\frac{2M}{r} - \frac{2M}{R}}} \]
+So the elapsed proper time experienced by the particle as it falls
+from $r=R$ to $r=2M$ is
+\begin{equation}
+  \label{eq:231}
+  \Delta \tau = \int_{2M}^R \frac{\dd{r}}{\sqrt{\frac{2M}{r} - \frac{2M}{R}}}
+\end{equation}
+This integral is finite, and so the particle reaches the surface in a
+finite time. What about the interval in coordinate time?
+\[ \dv{t}{\tau} = \frac{k}{1-\frac{2M}{r}} = \frac{\sqrt{1- \frac{2M}{R}}}{1-\frac{2M}{r}} \]
+so
+\[ \dd{t} = - \frac{\sqrt{1 - \frac{2M}{R}}}{\sqrt{\frac{2M}{r} - \frac{2M}{R}} \qty( 1 - \frac{2M}{r})} \dd{r} \]
+and so
+\begin{equation}
+  \label{eq:233}
+  \Delta t = \int_{2M}^R  \frac{\sqrt{1 - \frac{2M}{R}}}{\sqrt{\frac{2M}{r} - \frac{2M}{R}} \qty( 1 - \frac{2M}{r})} \dd{r}
+\end{equation}
+This integral diverges as $r \to 2M$, so it takes an infinite amount
+of coordinate time to reach the radius. The same is true for a
+photon. Thus an external observer sees the particle taking an infinite
+time to fall into the black hole.
+
+Clearly, the problem with the metric at the Schwarzschild surface is
+merely a coordinate singularity. There are no physical consequences in
+the local frame of the particle as it crosses the singularity, but
+this singularity is the event horizon, and it has effects on the
+future movement of the particle. Once this surface is crossed it is
+impossible to return, as all trajectories cause the particle to move
+to a smaller coordinate radius, unless the particle can exceed the
+speed of light.
+
+\section{Inside the event horizon}
+\label{sec:inside-event-horizon}
+
+\begin{figure}[t]
+  \centering
+  \input{figures/conformal-real.tex}
+  \caption{The Penrose diagram for a real black hole formed from the collapse of a massive star.}
+  \label{fig:real-black-hole}
+\end{figure}
+
+\begin{figure}[b]
+  \centering
+  \input{figures/conformal-scwarz.tex}
+  \caption{The Penrose conformal diagram for a Schwarzchild black hole.}
+  \label{fig:schwarz-conformal}
+\end{figure}
+
+Recall that the interval, $\dd{s}^2$ between neighbouring events---
+$(t,x,y,z)$ and $(t+\dd{t}, x+\dd{x}, y+\dd{y}, z+\dd{z})$ in some
+coordinate system---can be null $\dd{s}^2=0$, spacelike ($\dd{s}^2>0$),
+or timelike ($\dd{s}^2<0$). In a spacelike interval there will be a
+Lorentz frame, $S'$ in which the events occur at the same coordinate
+time, so $\dd{t}=0$. If $\dd{s}^2>0$ the two events cannot lie on the
+worldline of a material particle, as an observer in $S'$ would see it
+in two places at the same time, violating causality.
+
+Consider neighbouring events for a particle at rest inside the event
+horizon, with $\dd{r} = \dd{\theta} = \dd[\phi] = 0$, but $\dd{t} \neq
+0$, then
+\[ \dd{s}^2 = - \qty( 1 - \frac{2M}{r} ) \dd{t}^2 \] Since $r<2M$ it
+follows that this interval must be positive, so cannot lie on the
+worldline of the particle, and so a particle cannot remain stationary;
+in effect $t$ and $r$ have changed role as coordinate labels.
+
+To overcome the misbehaviour of the coordinates at a radius $r=2M$ we
+introduce a new time coordinate, 
+\begin{equation}
+  \label{eq:234}
+  \tilde{t} = t+2M \log( \frac{r}{2M} - 1 )
+\end{equation}
+taking $\dd{\theta} = \dd{\phi} = 0$,
+\begin{equation}
+  \label{eq:235}
+  \dd{s}^2 = - \qty(1 - \frac{2M}{r}) \dd{\tilde{t}}^2 + \frac{4M}{r} \dd{r} \dd{\tilde{t}} + \qty( 1 + \frac{2M}{r}) \dd{r}^2
+\end{equation}
+which has no coordinate singularity at $r=2M$ (but has one at $r=0$,
+which is a \emph{physical} singularity).
+
+We can then obtain the equations of the null cones by setting
+$\dd{s}^2=0$, dividing through by $\dd{r}^2$, and solving for
+$\dv{\tilde{t}}{r}$, leaving a quadratic equation with roots at
+\begin{equation}
+  \label{eq:236}
+  \dv{\tilde{t}}{r} = \qty{-1, \frac{1 + 2M/r}{1-2M/r}}
+\end{equation}
+As $r$ approaches the Schwarzschild radius the light cones start to
+tip over, and at $r=R~s$ the null cone has a vertical edge, so all
+timelike geodesics then point inwards.
+
+\section{Luminosity and Hawking radiation}
+\label{sec:luminosity}
+
+\subsection{Redshifting}
+\label{sec:redshifting}
+
+Just how ``black'' is a black hole? Shouldn't we see the light emitted
+by the star just before it collapsed eternally frozen at the event
+horizon? Light from the collapsing star is redshifted as it climbs out
+of the star's gravity field, with the redshift, $z$, 
+\begin{equation}
+  \label{eq:237}
+  z \equiv \frac{\lambda~o - \lambda~e}{\lambda~e} = \sqrt{\frac{1 - 2M/r~o}{1-2M/r~e}} -1  = \sqrt{\frac{r~e (r~o-R~s)}{r~o (r~e - R~s)}} - 1
+\end{equation}
+which diverges as $r~e \to R~s$. The bolometric luminosity of the
+star, compared to its constant luminosity $L~c$, ignoring relativistic
+effects is
+\[ L(t_0) = \frac{L~c}{(1+z)^2} \] This can be understood by
+considering the energy of each photon received by the observer is
+redshifted by a factor $(1+z)$, and the arrival times are increased by
+the same factor, so the luminosity is reduced by the square. The light
+ray, on a null geodesic, satisfies
+\[ \int_{t~e}^{t~o} \dd{t} = \int_{r~e}^{r~o} \frac{\dd{r}}{1-2M/r} \equiv  \int_{r~e}^{r~o} \frac{\dd{r}}{1-R~s/r} \]
+Then
+\[ t~o - t~e = r~o - r~e - R~s \log( \frac{r~o - R~s}{r~e - R~s} ) \]
+and, taking $t_0 = 0$
+\[ \log( \frac{r~e - R~s}{r~o - R~s} ) = \qty[\frac{t~o - (r~o - r~e)}{R~s}]\]
+\[ \implies \frac{r~e - R~s}{r~o - R~s} =
+\frac{r~o}{r~e}\frac{1}{(1+z)^2} \propto \exp( - \frac{t~o}{R~s} ) \]
+The, reintroducing the speed of light, $c$,
+\[ \frac{L(t~o)}{L~c} \propto \exp( - \frac{c t~o}{R~s} ) \] The
+luminosity of the star falls off exponentially in the time taken for
+light to cross the Schwarzschild radius.
+
+\subsection{Hawking radiation}
+\label{sec:hawking-radiation}
+
+The effects of quantum field theory in a curved spacetime do, however,
+allow black holes to have a very faint luminosity---a process known as
+Hawking radiation. This basically relies on the Uncertainty Principle
+allowing energy to be ``borrowed'' from the vacuum on a timescale
+$\Delta t$, where
+\[ \Delta t = \frac{\hbar}{\Delta E} \] This allows the temporary
+production of virtual photon pairs; if this occurs on the edge of the
+event horizon the negative energy member of the pair may fall into the
+black hole, leaving the positive energy photon free to propagate
+outside the black hole, and the negative energy one free to propagate
+inside the black hole. This radiation has a black body profile at
+infinity,
+\[ E_{\infty} = \frac{h}{8 \pi M} \] This means that a black hole has
+a thermodynamic temperature, and since it is emitting energy, it must
+be losing mass. The luminosity of a black hole can be derived using
+the Stefan-Boltzmann law, and is proportional to the product of the
+area of the event horizon, $A$, and the fourth power of the
+temperature, $T^4$, so
+\begin{align}
+  A &= 4 \pi R^2 = 4 \pi (2M)^2 = 16 \pi M^2 \nonumber\\
+\implies L & \propto M^{-2} \nonumber\\
+\implies \dot{M} & \propto M^{-2} \nonumber
+\end{align}
+Thus the lifetime of the black hole is $\tau \propto M^3$, and eventually we find
+\begin{equation}
+  \label{eq:240}
+  \qty( \frac{\tau}{10^{10}\,\text{yr}} ) = \qty( \frac{M}{10^{12}\,\kilogram} )^3
+\end{equation}
+
+\subsection{Black hole thermodynamics}
+\label{sec:black-hole-therm}
+
+The Hawking area theorem, which predates the work on Hawking
+radiation, states that
+\[ \dv{A}{t} \ge 0 \] which has an analogy in thermodynamics:
+entropy. The discovery of Hawking radiation firmed-up this analogy, by
+attaching a temperature to a black hole. For a Schwarzschild black
+hole,
+\[ \dd{A} = 32 \pi M \dd{M} \]
+or
+\[ \dd{M} = \frac{1}{32 \pi M} \dd{A} = \frac{\hbar}{8 \pi k M} \dd{\qty(\frac{Ak}{4 \hbar})} \]
+Thus
+\[ \dd{E} = T \dd{S} \] This only applies to a classical black hole,
+however, since Hawking radiation reduces the mass and hence the area
+of the event horizon.
+
+
+\section{Rotating black holes}
+\label{sec:rotating-black-holes}
+
+The treatment of rotating reference frames is substantially more
+complicated than static ones, but an example of a more general black
+hole than the Schwarzschild one, the Kerr black hole, requires this
+treatment, as it is rotating.
+
+The Kerr metric is characterised by the constants $M$ and $J$, which
+can be found by requiring that the metric must reproduce Newtonian
+behaviour in the weak-field limit. $M$ is the Newtonian mass of the
+star, and $J$ is the magnitude of the total angular momentum. Writing
+$a \equiv J/M$, the form of the metric is
+\begin{align}
+  \dd{s}^2 &= - \frac{\Delta - a^2 \sin[2](\theta)}{\rho^2} - 4a \frac{Mr \sin[2](\theta)}{\rho^2} \dd{t} \dd{\phi} \nonumber\\
+ & \qquad {}+ \frac{(r^2+a^2)^2 -a^2 \Delta \sin[2](\theta)}{\rho^2} \sin[2](\theta) \dd{\phi}^2 \nonumber\\
+& \qquad {}+ \frac{\rho^2}{\Delta} \dd{r}^2 + \rho^2 \dd{\theta}^2
+\end{align}
+having defined $\Delta = r^2 - 2Mr + a^2$ and $\rho^2 = r^2 + a^2
+\cos[2](\theta)$. This metric is clearly non-diagonal, and this
+introduces the phenomenon of frame-dragging.
+
+\subsection{Conservation of four momentum on geodesics}
+\label{sec:cons-four-moment}
+
+A material particle has a geodesic equation 
+\[ \dv{v^{\alpha}}{\tau} + \Gamma^{\alpha}_{\beta \delta} v^{\beta} v^{\delta} = \qty( \pdv{v^{\alpha}}{x^{\beta}} v^{\beta} + \Gamma^{\alpha}_{\beta \delta} v^{\beta} v^{\delta} ) = v^{\beta} \tensor{v}{^{\alpha}_{;\beta}} = 0 \]
+The mixed form is
+\[ v^{\alpha} v_{\beta;\alpha} = 0 \] Introducing the four momentum,
+$p^{\alpha} = m v^{\alpha}$, for $m$ the particle rest mass, then
+\begin{equation}
+  \label{eq:238}
+  p^{\alpha} p_{\beta;\alpha} = 0
+\end{equation}
+Or,
+\[ p^{\alpha}p_{\beta,\alpha} = \Gamma^{\gamma}_{\beta \alpha} p^{\alpha} p_{\gamma} = \half g^{\gamma \nu} \qty( g_{\nu \beta,\alpha} + g_{\nu \alpha, \beta} - g_{\alpha \beta, \nu}) p^{\alpha} p_{\gamma} \]
+Which, after contraction and index permutation reduces to
+\[ p^{\alpha} p_{\beta,\alpha} = \half g_{\nu \alpha, \beta} p^{\nu} p^{\alpha} \]
+which can then be expressed as
+\begin{equation}
+  \label{eq:239}
+  m v^{\alpha} \pdv{p_{\beta}}{x^{\alpha}} = m \dv{x^{\alpha}}{\tau} \pdv{p_{\beta}}{x^{\alpha}} = m \dv{p_{\beta}}{\tau} = \half g_{\nu \alpha,\beta} p^{\nu} p^{\alpha}
+\end{equation}
+If all the components of the metric are independent of the coordinate
+$x^{\beta}$ hen the right hand side is zero, implying that
+$p^{\alpha}$ is constant along the geodesic.
+
+\subsection{Frame dragging}
+\label{sec:frame-dragging}
+
+The components of the Kerr metric are independent of $\phi$, but a
+material particle moving on a geodesic conserves the $p_{\phi}$
+component of its four momentum. The contravariant component $p^{\phi}$
+is
+\[ p^{\phi} = g^{\phi \alpha} p_{\alpha} = g^{\phi \phi} p_{\phi} +
+g^{\phi t} p_t \] In an orthogonal metric the second term would be
+zero, but the Kerr metric is non-orthogonal. Similarly, for $p^t$,
+\[ p^t = g^{t\alpha} p_{\alpha} =  g^{tt} p_t + g^{t \phi} p_{\phi} \]
+A particle with $p_{\phi}=0$ will have
+\[p^t = m \dv{r}{\tau}, \qquad p^{\phi} = m \dv{\phi}{\tau} \]
+So
+\[ \dv{\phi}{t} = \frac{p^{\phi}}{p^t} = \frac{g^{\phi t}}{g^{tt}}
+\neq 0 \] Thus a distance observer sees an angular velocity: an
+irrotational particle free-falling in a Kerr metric gains angular
+momentum.
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "../project"
+%%% End: 

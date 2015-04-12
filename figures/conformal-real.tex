@@ -1,0 +1,55 @@
+ \begin{tikzpicture}[scale=0.5]
+\tikzset{help lines/.style={draw = gray!20}}
+% \draw [pattern=north west lines, pattern color=gray!50]  (0,3.75) to  (7.5,3.75) to (3.75, 0) -- cycle ;
+% \draw [pattern=north east lines, pattern color=gray!50]  (0,-3.75) to  (7.5,-3.75) to (3.75, 0) -- cycle ;
+%\draw [ultra thick] (0,-3.75) -- (7.5,-3.75); 
+\draw [ultra thick] (0,1.75) -- (1.65,1.75) node [midway, above] {$r=0$}; 
+%\draw (3.75,-4.1) node {$r=0$}; \draw (3.75,4.1) node {$r=0$};
+\draw (2.5, 1.9) node {$i^+$}; 
+\draw (-1, 0) node {$r=0$};
+\draw (0.2, -4.1) node {$i^-$}; \draw (3.8, 0) node {$i^0$};
+\draw (3, 1) node {$\mathcal{I}^+$}; \draw (3, -1) node {$\mathcal{I}^-$};
+%\draw (0,1.75) -- (0,-2.5);
+\clip (0,-4.1) rectangle (4,1.75);
+\begin{scope}
+   \begin{axis}[mark=none, xmin=-0, xmax=90, 
+                           ymin=-90, ymax=90, 
+                           anchor=origin, height=10cm, width=5cm,
+                           xlabel=$U$, ylabel=$V$,
+                           axis lines=none]
+     \foreach \u in {-0.5, -0.375, ..., 0.5}{
+       \addplot[mark=none, help lines, domain=-79:79]{atan(\u - tan(x))  +  atan(\u + tan(x)) };
+       }
+   \end{axis}
+   \begin{axis}[mark=none, xmin=-90, xmax=90, 
+                           ymin=-0, ymax=90, 
+                           anchor=origin, height=5cm, width=10cm,
+                           xlabel=$U$, ylabel=$V$,
+                           axis lines=none,
+                           rotate around={-90:(axis cs:0,0)},
+                           ]
+     \foreach \u in {-0.5, -0.375, ...,0.5}{
+       \addplot[mark=none, help lines, domain=-79:79]{atan(\u - tan(x))  +  atan(\u + tan(x)) };
+       }
+       \clip [thick] (axis cs: -80,0)--(axis cs: 0, 80)--(axis cs: 80,0)--(axis cs:0,-80)--cycle;
+       \draw [ultra thick] (axis cs: -80,0)--(axis cs: 0, 80)--(axis cs: 80,0)--(axis cs:0,-80)--cycle;
+
+       \addplot [fill=black, ultra thick, mark=none, domain=-79:79] {atan(0.15 - tan(x))  +  atan(0.15 + tan(x)) } -- cycle;
+
+   \end{axis}
+ \end{scope}
+\draw [ultra thick] (0,1.75) -- (1.65,1.75); 
+%\draw (0,1.75) -- (0,-4);
+
+
+
+\end{tikzpicture}
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "../project"
+%%% End: 
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "../project"
+%%% End: 
