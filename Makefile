@@ -6,7 +6,7 @@ xPRE =  $(TEX) -ini -job-name="preamble" "&pdflatex preamble.tex\dump"
 
 BDIR = _build
 
-ORG_FILES=$(wildcard chapters/*/*.org)
+ORG_FILES=$(wildcard chapters/*.org)
 INT_FILES=$(ORG_FILES:.org=.int_tex)
 TEX_FILES=$(ORG_FILES:.org=.tex)
 #$(patsubst chapters/%.org,$(BDIR)/org/%.int_tex,$(ORG_FILES))
@@ -28,7 +28,7 @@ html : $(HTML_FILES)
 
 pdf :	document.pdf ## Produce a PDF output
 
-document.pdf : document.tex  #chapters/glossary/glossary.tex $(TEX_FILES)
+document.pdf : document.tex $(TEX_FILES)  #chapters/glossary/glossary.tex $(TEX_FILES)
 	$(TEXMK) $< 
 
 
