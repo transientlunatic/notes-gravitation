@@ -2,23 +2,25 @@
 Manifolds
 *********
 
-Manifolds
-=========
+.. include:: macros.rst
 
-:math:`\rn` is the set of all :math:`n`-tuples of real numbers. A set
-:math:`M` is defined to be a manifold if each element of :math:`M` has
-an open neighbourhood with a continuous bijection onto an open set of
-:math:`\rn` for some :math:`n`. This mathematical object is rather
-degenerate, and hasn’t got, for example, a notion of distance, and what
-structure is defined is only at a local level.
+.. warning::
 
-The elements, :math:`P` of :math:`M` have a unique :math:`n`-tuple, the
-co-ordinates of :math:`P`:
+   This page contains lots of old latex macros which don't work with MathJax, so until I get around to fixing them this page is a mess.
+
+Definitions
+-----------
+
+:math:`\rn` is the set of all :math:`n`-tuples of real numbers.
+A set :math:`M` is defined to be a manifold if each element of :math:`M` has an open neighbourhood with a continuous bijection onto an open set of :math:`\rn` for some :math:`n`.
+This mathematical object is rather degenerate, and hasn’t got, for example, a notion of distance, and what structure is defined is only at a local level.
+
+The elements, :math:`P` of :math:`M` have a unique :math:`n`-tuple, the co-ordinates of :math:`P`:
 
 .. math::
+   :label: manifold-coordinates
 
-   \label{eq:5}
-     \qty( x_1(P), x_2(P), \dots, x_n(P) )
+     \left( x_1(P), x_2(P), \dots, x_n(P) \right)
 
 Let :math:`f:U(P) \to \rn` be a function from a neighbourhood :math:`U`
 around :math:`P\in M` of :math:`M` onto an open set
@@ -33,15 +35,18 @@ and :math:`V` is described by two coordinate systems, so there should be
 an expression connecting the two. Such an equation is a *coordinate
 transformation*.
 
-[Manifold] A manifold is a second-countable Hausdorff space which is
-locally homeomorphic to Euclidean space.
+.. glossary::
+   
+Manifold
+   A manifold is a second-countable Hausdorff space which is locally homeomorphic to Euclidean space.
 
-[Chart] A chart :math:`(U, f_U)` of a manifold is an open set :math:`U`
-together with a mapping :math:`f_U: U \to \rn`.
+Chart
+   A chart :math:`(U, f_U)` of a manifold is an open set :math:`U` together with a mapping :math:`f_U: U \to \rn`.
 
-[Coordinates] The coordinates :math:`(x^1, \cdots, x^n)` of the image
-:math:`f_U(x) \in \rn` are the coordinates of :math:`x` in the chart
-:math:`(U, f_U)`; the local coordinate system.
+Coordinates
+   The coordinates :math:`(x^1, \cdots, x^n)` of the image
+   :math:`f_U(x) \in \rn` are the coordinates of :math:`x` in the chart
+   :math:`(U, f_U)`; the local coordinate system.
 
 If a whole system of charts, an atlas, can be constructed such that
 every point in :math:`M` is in at least one neighbourhood, and every
@@ -55,16 +60,12 @@ functions, and vector spaces. Groups also have representations as
 manifolds; a Lie group, e.g. the group of rotations of a rigid object in
 space is also a :math:`C^{\infty}` manifold.
 
-[Orientability] Let :math:`M^n` be a differentiable
-:math:`n`-dimensional manifold equipped with an atlas
-:math:`\set{\phi_a}`, and suppose that for any two charts of the atlas,
-:math:`\phi_{\alpha}`, and :math:`\phi_{\beta}` the Jacobian of the
-transition function :math:`\phi_{\beta \alpha} = \phi_{\beta} \circ
-  \phi_{\alpha}^{-1}` is positive at all points in the domain, then
-:math:`M` is an orientable manifold.
+.. glossary::
 
-A Jacobian which is negative will reverse the orientation of a
-coordinate system.
+Orientability
+   Let :math:`M^n` be a differentiable :math:`n`-dimensional manifold equipped with an atlas :math:`\set{\phi_a}`, and suppose that for any two charts of the atlas, :math:`\phi_{\alpha}`, and :math:`\phi_{\beta}` the Jacobian of the transition function :math:`\phi_{\beta \alpha} = \phi_{\beta} \circ \phi_{\alpha}^{-1}` is positive at all points in the domain, then :math:`M` is an orientable manifold.
+
+A Jacobian which is negative will reverse the orientation of a coordinate system.
 
 Global Properties
 =================
@@ -77,41 +78,9 @@ other. If there is a :math:`C^{\infty}` bijective map from one
 :math:`C^{\infty}` manifold to another, then the two map is a
 *diffeomorphism* from one manifold to the other.
 
-[scale=0.45]
+.. tikz:: A manifold.
+   :include: figures/manifold.pgf
 
-[yshift=120] (0,0) – (10,0); at (-1.2,0)
-:math:`\lambda \in \mathbb{R}^1` ; in 0,1,...,10 (re) at (, 0);
-
-[xshift=-50] (0,0) to[out=-10,in=150] (6,-2) – (12,1) to[out=150,in=-10]
-(5.5,3.7) – cycle;
-
-[scale=0.4, xshift=300] (A) at (0,0); node at (11.5, 0.8) :math:`U`;
-(0,0) to[out=-10,in=150] (6,-2) – (12,1) to[out=150,in=-10] (5.5,3.7) –
-cycle;
-
-(0,0) .. controls (6,-0.2) and (5,1.5) .. coordinate[pos=0.0] (cux0)
-coordinate[pos=0.1] (cux1) coordinate[pos=0.2] (cux2)
-coordinate[pos=0.3] (cux3) coordinate[pos=0.4] (cux4)
-coordinate[pos=0.5] (cux5) coordinate[pos=0.6] (cux6)
-coordinate[pos=0.7] (cux7) coordinate[pos=0.8] (cux8)
-coordinate[pos=0.9] (cux9) coordinate[pos=1.0] (cux10) (12,1);
-(cux10)+(0.3,0) node [right] :math:`P \in M`;
-
-in 0,1,...,10 (cux) edge [accent-blue, shorten >=0.1cm, shorten <=
-0.1cm, line width=0.3mm, <-, out=90, in=270] (re); (re) circle (3pt);
-(cux) circle (3pt); (13, 3) node :math:`f`; (3, -2) node :math:`g`;
-
-[yshift=-210, xshift=-50] (C) at (0, 0.5); (0,0) – (12.1,0); (0,0) –
-(0,5); (0,0) rectangle (12,5); (10,0.5) node
-:math:`g(U) \in \mathbb{R}^n`; (E) at (12, 4);
-
-(0, 0.5) edge coordinate[pos=1/10] (cdx4) coordinate[pos=3/10] (cdx5)
-coordinate[pos=6/10] (cdx6) coordinate[pos=9/10] (cdx7) (8, 5);
-
-in 4,5,...,7 (cdx) circle (3pt);
-
-in 4,5,...,7 (cux) edge [accent-red, shorten >=0.1cm, shorten <= 0.1cm,
-line width=0.3mm, ->, out=270, in=90] (cdx);
 
 Curves and Functions on Manifolds
 =================================
@@ -149,13 +118,9 @@ parameter value :math:`\lambda`,
 
  using Einstein notation.
 
-In Euclidean space the set :math:`\set{ \dv*{x^i}{\lambda} }` would be
-components of a vector tangent to the curve :math:`x_i(\lambda)`, and
-would be the tangent to an infinite number of curves through :math:`P`.
+In Euclidean space the set :math:`\set{ \dv*{x^i}{\lambda} }` would be components of a vector tangent to the curve :math:`x_i(\lambda)`, and would be the tangent to an infinite number of curves through :math:`P`.
 
-Manifolds do not necessarily have a notion of distance between points,
-so vectors must be defined in terms only of infinitessimal
-neighbourhoods of the points of :math:`M`.
+Manifolds do not necessarily have a notion of distance between points, so vectors must be defined in terms only of infinitessimal neighbourhoods of the points of :math:`M`.
 
 Vectors
 =======
@@ -166,21 +131,21 @@ Suppose :math:`a` and :math:`b` are two numbers and
 
 .. math:: \dv{\mu} = \dv{x^i}{\mu} \pdv{x^i}
 
- and
+and
 
 .. math:: a \dv{\lambda} + b\dv{\mu} = \qty( a \dv{x^i}{\lambda} + b \dv{x^i}{\mu} ) \pdv{x^i}
 
- The numbers inside the bracket are the components of a new vector,
+The numbers inside the bracket are the components of a new vector,
 tangent to a curve at :math:`P`, so a curve must exist, with parameter
 :math:`\phi` such that at :math:`P`,
 
 .. math:: \dv{\phi} = \qty( a \dv{x^i}{\lambda} + b \dv{x^i}{\mu} ) \pdv{x^i}
 
- collecting this, at :math:`P`,
+collecting this, at :math:`P`,
 
 .. math:: a \dv{\lambda} + b \dv{\mu} = \dv{\phi}
 
- forming a vector space.
+forming a vector space.
 
 In any given coordinate system there are special curves, the coordinate
 lines. The derivations along them are :math:`\pdv*{x^i}`, and
@@ -197,26 +162,20 @@ there is a coordinate system :math:`\set{x^i}` in a neighbourhood
 :math:`U` of :math:`P` then these coordinate define a coordinate basis
 at all points in :math:`U`.
 
-[Tangent Vector] Let :math:`M^m` be a differential manifold, :math:`p` a
-point on it, and :math:`U` be an open neighbourhood of :math:`M`. Let
-:math:`\epsilon>0`, and :math:`\gamma :
-  (-\epsilon, \epsilon) \to U` be a differentiable curve on :math:`M`
-such that :math:`\gamma(0) = p`. For any differentiable function
-:math:`f:U \subset M
-  \to \mathbb{R}` the directional derivative of :math:`f` along
-:math:`\gamma` to be the number
+.. glossary::
 
-.. math:: D_{\gamma}(f) = \eval{\dv{t}( f (\gamma(t) ) )}_{t=0}
+Tangent Vector
+   Let :math:`M^m` be a differential manifold, :math:`p` a point on it, and :math:`U` be an open neighbourhood of :math:`M`.
+   Let :math:`\epsilon>0`, and :math:`\gamma :   (-\epsilon, \epsilon) \to U` be a differentiable curve on :math:`M` such that :math:`\gamma(0) = p`.
 
-The operator :math:`D_{\gamma}` is called the tangent vectorto
-:math:`\gamma` at :math:`p`.
+   For any differentiable function :math:`f:U \subset M \to \mathbb{R}` the directional derivative of :math:`f` along :math:`\gamma` to be the number
 
-[Tangent Space] The tangent space of :math:`M` at :math:`p`, :math:`T_p`
-is a vector space with the same dimension as the manifold composed of
-all of the tangent vectors to the manifold at :math:`p`. If :math:`x` is
-a coordinate system which contains :math:`p`, then the set of
-:math:`\pdv*{x}` are the basis of the tangent space; and this is a
-coordinate basis.
+   .. math:: D_{\gamma}(f) = \left. \frac{\dd}{\dd t}  f \left(\gamma(t)\right)  \right|_{t=0}
+
+   The operator :math:`D_{\gamma}` is called the tangent vector to :math:`\gamma` at :math:`p`.
+
+Tangent Space
+   The tangent space of :math:`M` at :math:`p`, :math:`T_p` is a vector space with the same dimension as the manifold composed of all of the tangent vectors to the manifold at :math:`p`. If :math:`x` is a coordinate system which contains :math:`p`, then the set of :math:`\pdv*{x}` are the basis of the tangent space; and this is a coordinate basis.
 
 At any point :math:`P` an arbitrary vector :math:`\vec{V}` is
 

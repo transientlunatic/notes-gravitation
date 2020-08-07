@@ -1,0 +1,73 @@
+\begin{scope}[yshift=120]
+  \draw[ultra thick, green] (0,0) -- (10,0); 
+  \node at (-1.2,0) {$\lambda \in {R}^1$} ;
+  \foreach \coor in {0,1,...,10}
+  \coordinate (re\coor) at (\coor, 0);
+\end{scope}
+\begin{scope}[xshift=-50]
+  \shade[left color=blue!10,right color=blue!80] 
+  (0,0) to[out=-10,in=150] (6,-2) -- (12,1) to[out=150,in=-10] (5.5,3.7) -- cycle;
+
+  \begin{scope}[scale=0.4, xshift=300]
+    \coordinate (A) at (0,0);
+    \draw node at (11.5, 0.8) {$U$};
+    \fill[opacity=0.1, fill=black, dotted] 
+    (0,0) to[out=-10,in=150] (6,-2) -- (12,1) to[out=150,in=-10] (5.5,3.7) -- cycle;
+  \end{scope}
+
+  \draw[orange,line width=1.5pt,shorten >= 3pt,shorten <= 3pt] 
+  (0,0) .. controls (6,-0.2) and (5,1.5) ..
+  coordinate[pos=0.0] (cux0)
+  coordinate[pos=0.1] (cux1) 
+  coordinate[pos=0.2] (cux2) 
+  coordinate[pos=0.3] (cux3) 
+  coordinate[pos=0.4] (cux4) 
+  coordinate[pos=0.5] (cux5) 
+  coordinate[pos=0.6] (cux6) 
+  coordinate[pos=0.7] (cux7) 
+  coordinate[pos=0.8] (cux8) 
+  coordinate[pos=0.9] (cux9) 
+  coordinate[pos=1.0] (cux10) (12,1);
+  \draw (cux10)+(0.3,0) node [right] {$P \in M$};
+
+%   % we draw the filled red circles on the red line
+  \foreach \coor in {0,1,...,10}{
+    \draw (cux\coor) edge  [blue, shorten >=0.1cm, 
+    shorten <= 0.1cm, line width=0.3mm, 
+    <-, out=90, in=270] 
+    (re\coor);
+    \draw[fill=green, draw=white] (re\coor) circle (3pt);
+    \draw[fill=orange, draw=white] (cux\coor) circle (3pt);
+  }
+  \draw (13, 3) node {$f$};
+  \draw (3, -2) node {$g$};
+\end{scope}
+
+\begin{scope}[yshift=-210, xshift=-50]
+  \coordinate (C) at (0, 0.5);
+  \draw [->] (0,0) -- (12.1,0); 
+  \draw [->] (0,0) -- (0,5); 
+  \fill [opacity=0.1] (0,0) rectangle (12,5);
+  \draw (10,0.5) node {$g(U) \in {R}^n$};
+  % \node (E) at (12, 4);
+
+  \draw [ultra thick, green, out=0, in=180] 
+  (0, 0.5) edge % [out=0, in=180] 
+  coordinate[pos=1/10] (cdx4)
+  coordinate[pos=3/10] (cdx5)
+  coordinate[pos=6/10] (cdx6)
+  coordinate[pos=9/10] (cdx7)
+  (8, 5);
+\end{scope}
+
+\foreach \coor in {4,5,...,7}{
+  % \draw[fill=green, draw=white] (re\coor) circle (3pt);
+  \draw[fill=green, draw=white] (cdx\coor) circle (3pt);
+}
+
+\foreach \coor in {4,5,...,7}{
+  \draw (cux\coor) edge  [red, shorten >=0.1cm, 
+  shorten <= 0.1cm, line width=0.3mm, 
+  ->, out=270, in=90] 
+  (cdx\coor);
+}

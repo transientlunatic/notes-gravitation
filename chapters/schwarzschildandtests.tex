@@ -1,0 +1,541 @@
+There are four major classical tests of general relativity
+\begin{enumerate}
+\item advance of pericentre
+\item light deflection
+\item redshift
+\item time delay
+\end{enumerate}
+
+\section{Geodesics of the Schwarzschild metric}
+\label{sec:geod-schw-metr}
+
+The geodesics of a test particle in the Schwarzchild metric satisfy
+the geodesic equation (\ref{eq:112}) with the proper time, $\tau$ as
+the affine parameter,
+\begin{equation}
+  \label{eq:141}
+  \dv{\tau}\qty(g_{\lambda\nu} \dv{x^{\nu}}{\tau} ) - \half \pdv{g_{\mu \nu}}{x^{\lambda}} \dv{x^{\mu}}{\tau} \dv{x^{\nu}}{\tau} = 0
+\end{equation}
+The metric is static, and symmetrical, so is independent of $t$ and
+$\phi$, thus if $\lambda \in \set{0,3}$ the second term vanishes. The
+metric is also orthogonal, so
+\[ \dv{\tau} \qty( g_{tt} \dv{t}{\tau}) = \dv{\tau} \qty( g_{\phi \phi} \dv{\phi}{\tau}) = 0 \]
+Integrating these gives
+\[ g_{tt} \dv{t}{\tau} = \text{constant}, \qquad g_{\phi \phi} \dv{\phi}{\tau} = \text{constant} \]
+The geodesic equation for $\lambda=2$ ($\theta$) follows from equation (\ref{eq:112})
+\begin{equation}
+  \label{eq:142}
+  \dv{\tau} \qty( r^2 \dv{\theta}{\tau} ) - \half  \pdv{\theta} \qty( r^2 \sin[2](\theta) )\qty[ \dv{\phi}{\tau}]^2 = 0 
+\end{equation}
+which reduces to
+\begin{equation}
+  \label{eq:143}
+  r^2 \dv[2]{\theta}{\tau} + 2 r \dv{r}{\tau} \dv{\theta}{\tau} - r^2 \sin(\theta) \cos(\theta) \qty(\dv{\phi}{\tau})^2 = 0
+\end{equation}
+This has a particular solution when $\theta=\pi/2$, which fixes the
+orbit of a test particle to lie in the equatorial plane of the
+coordinate system, thus \[ \dv{\theta}{\tau} = 0 \] We then also have
+\begin{equation}
+  \label{eq:144}
+  \dv{t}{\tau} = \frac{k}{1 - \frac{2M}{r}}, \qquad \dv{\phi}{\tau} = \frac{h}{r^2}
+\end{equation}
+For $k$, $h$ constant. The geodesic differential equation for $r$ can
+then be found from the general geodesic equation, 
+\begin{equation}
+  \label{eq:145}
+  -1 = g_{tt} \qty( \dv{t}{\tau} )^2 + g_{rr} \qty(\dv{r}{\tau})^2 + g_{\phi \phi} \qty( \dv{\phi}{\tau} )^2
+\end{equation}
+which reduces to
+\begin{equation}
+  \label{eq:146}
+  \qty( \dv{r}{\tau} )^2 = k^2 - 1 - \frac{h^2}{r^2} + \frac{2M}{r} \qty(1+ \frac{h^2}{r^2})
+\end{equation}
+
+\section{Planetary orbits in Newtonian gravity}
+\label{sec:plan-orbits-newt}
+
+In Newtonian mechanics a test mass orbiting another mass $M$ on the
+equatorial plane has equations of motion of the form
+\begin{equation}
+  \label{eq:147}
+  r^2 \dv{\phi}{t} = h , \qquad \dv[2]{r}{t} = - \frac{M}{r^2} + r \qty( \dv{\phi}{t} )^2
+\end{equation}
+To solve the second equation we normally change variables, $t \to u =
+1/r$ and $t \to \phi$. We have \[ \dv{\phi}{t} = hu^2 \] so
+\begin{equation}
+  \label{eq:148}
+  \dv{r}{t} = \dv{t} \qty(\frac{1}{u}) = - \frac{1}{u^2} \dv{u}{\phi} \dv{\phi}{t} = - h \dv{u}{\phi} 
+\end{equation}
+so
+\begin{equation}
+  \label{eq:149}
+  \dv[2]{u}{\phi} = -u + \frac{M}{h^2}
+\end{equation}
+which has a solution
+\begin{equation}
+  \label{eq:150}
+  u = \frac{M}{h^2} \qty( 1+ e \cos(\phi))
+\end{equation}
+which is an ellipse with eccentricity $e$, semi-major axis $a$, and a
+focus at $r=0$. $h$ is related to the semi-latus rectum
+\[ \ell = \frac{h^2}{M} = a(1-e^2) \]
+
+
+\section{Advance of pericentre}
+\label{sec:advance-pericentre}
+
+Performing a similar procedure on equation (\ref{eq:146}), with $r \to
+u$ and $\tau \to \phi$, we find
+\begin{equation}
+  \label{eq:151}
+  h^2 \qty( \dv{u}{\phi})^2 = \qty(k^2 - 1) - h^2u^2 + 2 Mu \qty( 1+h^2u^2) 
+\end{equation}
+Differentiating this, and cancelling the common $\dv{u}{\phi}$,
+\begin{equation}
+  \label{eq:152}
+  \dv[2]{u}{\phi}  = -u + \frac{M}{h^2} + 3 Mu^2
+\end{equation}
+This tiny $3Mu^2$ component is the additional contribution from GR;
+for the Earth's orbit the ratio of this to the $M/h^2$ quantity is
+around $3\e{-8}$. We can gain a good approximation to equation
+(\ref{eq:152}) by replacing the $u$ by a $u^2$ term on the right hand
+of the Newtonian equivalent, so
+\begin{equation}
+  \label{eq:153}
+  \dv[2]{u}{\phi} = -u + \frac{M}{h^2} + 3 \frac{M^3}{h^4} \qty( 1 + 2e \cos(\phi) + e^2 \cos[2](\phi) )
+\end{equation}
+\begin{figure}[t] \centering
+\begin{tikzpicture} 
+  \begin{polaraxis}
+    \addplot+[mark=none,domain=0:5000,samples=1200, muted-green, line width=1]
+    {1/(1+0.6*cos(0.9*x))}; % equivalent to (x,{sin(..)cos(..)}), i.e. % the expression is the RADIUS
+  \end{polaraxis}
+\end{tikzpicture}
+\caption{The precession of the pericentre.}
+\end{figure}
+decomposing $u$ into $u = u~N + u~{GR}$, and then subtracting the Newtonian component
+\begin{equation}
+  \label{eq:155}
+  \dv[2]{u~{GR}}{\phi} = -u~{GR} + 3 \frac{M^3}{h^4} \qty(1+ 2e \cos(\phi) + e^2 \cos[2](\phi) )
+\end{equation}
+Noting
+\begin{equation}
+  \label{eq:154}
+  \cos[2](\phi) = \half (1 + \cos(2 \phi) )
+\end{equation}
+then
+\begin{equation}
+  \label{eq:156}
+  \dv[2]{u~{GR}}{\phi} + u~{GR} = 3 \frac{M^3}{h^4} \qty( 1 + \frac{e^2}{2} + 2e \cos(\phi) + \frac{e^2}{2} \cos(2 \phi) )
+\end{equation}
+The right-hand side has the form $A + B \cos(\phi) + C \cos(2 \phi)$ for constants $A,B,C$.
+\begin{subequations}
+  \begin{align}
+    u~{GR} &= A \\ &= \half B \phi \sin(\phi) \\ &= - \frac{1}{3} C \cos(2 \phi)
+  \end{align}
+\end{subequations}
+with the correction to the Newtonian orbit given by the sum of these
+integrals. The first and third terms add a negligible constant, and a
+tiny wiggle, but the second term is secular, so increases constantly.
+Thus
+\begin{equation}
+  \label{eq:157}
+  u = \frac{M}{h^2} \qty( 1+ e \cos(\phi) + \frac{3M^2}{h^2} e \phi \sin(\phi) )
+\end{equation}
+given that the $3M^2/h^2$ term is very small, and making small angle
+approximations, $\cos(\beta)\approx 1$ and $\sin(\beta)\approx \beta$,
+and recalling that
+\[ \cos(\alpha-\beta) = \cos(\alpha) \cos(\beta) + \sin(\alpha) \sin(\beta) \]
+we can rewrite equation (\ref{eq:157}) as
+\begin{equation}
+  \label{eq:158}
+  u  =\frac{M}{h^2} \qty[1 + e \cos( \qty( 1 - \frac{3M^2}{h^2}) \phi )]
+\end{equation}
+Comparing this to the Newtonian analogue it's clear that the solution
+is elliptical and periodic with a period
+\begin{equation}
+  \label{eq:159}
+  P = \frac{2 \pi}{1 - 3M^2/h^2} > 2 \pi
+\end{equation}
+so the ellipse precesses, and the pericentre line advances by an
+amount $\Delta$ in every orbit,
+\begin{equation}
+  \label{eq:160}
+  \Delta = 2 \pi \qty( 1 - \frac{3M^2}{h^2})^{-1} - 2 \pi \approx \frac{6 \pi M^2}{h^2} = \frac{6 \pi M}{a(1-e^2)}
+\end{equation}
+
+
+
+\section{Gravitational light deflection}
+\label{sec:grav-light-defl}
+
+The deflection of light occurs in the Newtonian framework, provided
+photons have mass, but is formally predicted by General relativity for
+all particles with energy.
+
+\subsection{Newtonian deflection}
+\label{sec:newtonian-deflection}
+
+Consider the path of a photon passing by a mass $M$; the orbit of the
+photon will be a hyperbola with $M$ at one focus, so
+\[ r(\phi) = \frac{ r~{min} (e+1) }{1+e \cos(\phi) } \] for $e>1$ the
+eccentricity, and $r~{min}$ the closest distance the photon approaches
+to $M$.
+\begin{figure}[t] \centering
+\begin{tikzpicture} 
+  \begin{polaraxis}
+    \addplot+[mark=none,domain=-100:100,samples=300, muted-green, line
+    width=1]
+    {0.2*(1.6+1)/(1+1.6*cos(x))}; % equivalent to (x,{sin(..)cos(..)}), i.e. % the expression is the RADIUS
+    \draw [thick] (axis cs:90, 0.52) -- (axis cs:90, 0.7);
+\draw [thick, bend right] (axis cs:90,0.7) to (axis cs:98.5,0.67);
+\draw (axis cs:90,0.6) node[right] {$\frac{\Delta\pi}{2}$};
+  \end{polaraxis}
+\end{tikzpicture}
+\caption{The hyperbolic trajectory of a photon.}
+\end{figure}
+Before and after the encounter the photon has asymptotic directions
+\begin{equation}
+  \label{eq:161}
+  \phi = \pm \qty( \frac{\pi}{2} + \frac{\Delta \phi}{2})
+\end{equation}
+for $\Delta \phi$ the total deflection angle. Just like for an
+elliptical orbit we require \[ r^2 \dv{\phi}{t} = h \] for $h$ constant,
+\[ h^2 = M \ell = Ma (e^2 - 1) = Ma (e-1)(e+1) = M r~{min}(e+1) \]
+with $\ell$ the semi-latus rectum.
+The photon must also satisfy an energy equation,
+\begin{equation}
+  \label{eq:162}
+  \half v^2 - \frac{M}{r} = \half \qty[ \qty( \dv{r}{t} )^2 + r^2 \qty( \dv{\phi}{t} )^2 ] - \frac{M}{r} = E~{tot}
+\end{equation}
+for the terms in the brackets the radial and transverse velocity
+components. Since 
+\[ \dv{r}{t} = \dv{r}{\phi} \dv{\phi}{t} \]
+\begin{equation}
+  \label{eq:163}
+  \frac{h^2}{2r^2} \qty[ \frac{1}{r^2} \qty(\dv{r}{\phi})^2 + 1] - \frac{M}{r} = E~{tot}
+\end{equation}
+Then from the equation of the orbit,
+\begin{equation}
+  \label{eq:164}
+  \dv{r}{\phi} = \frac{r~{min}(e+1)e \sin(\phi)}{(1+e \cos(\phi))^2} = \frac{r^2 e \sin(\phi)}{r~{min} (e+1)}
+\end{equation}
+Substituting for $h$ in the energy equation,
+\begin{equation}
+  \label{eq:165}
+  E~{tot} = \frac{M(e-1)}{2 r~{min}}
+\end{equation}
+We can see that $r \to \infty$ when $\cos(\phi) = -1/e$, and letting
+$v=c=1$, for $r \to \infty$ we have
+\begin{equation}
+  \label{eq:166}
+  E~{tot} = \half
+\end{equation}
+Rearranging equation (\ref{eq:165}), and since $e\gg 1$
+\begin{equation}
+  \label{eq:167}
+  e = 1 + \frac{r~{min}}{M} \approx \frac{r~{min}}{M}
+\end{equation}
+So the outgoing photon has an asymptotic direction
+\begin{equation}
+  \label{eq:168}
+  \cos(\phi) = \cos( \frac{\pi}{2} + \frac{\Delta \phi}{2} ) = - \sin( \frac{\Delta \phi}{2}) = - \frac{M}{r~{min}}
+\end{equation}
+Since $\Delta \phi \ll 1$,
+\begin{equation}
+  \label{eq:169}
+  \Delta \phi = \frac{2M}{r~{min}}
+\end{equation}
+
+\subsection{Relativistic deflection}
+\label{sec:relat-defl}
+
+The geodesics for a photon can be found in a similar way to those for
+masses in section \ref{sec:geod-schw-metr}, but the affine parameter
+is $s$, since a photon has a proper time $\tau = 0$. We find
+\begin{subequations}
+  \begin{align}
+    \dv{t}{s} &= \frac{k}{1 - 2 \frac{M}{r}} \\ \dv{\phi}{s} &= \frac{h}{r^2}
+  \end{align}
+\end{subequations}
+For the $\theta$ equation there is a particular solution
+$\theta=\frac{\pi}{2}$, and also \[ \frac{\theta}{s}=0 \]
+so
+\begin{equation}
+  \label{eq:170}
+  \qty( \dv{r}{s})^2 = k^2 - \frac{h^2}{r^2} + \frac{2 M h^2}{r^3} 
+\end{equation}
+Making the change of variables $r \to u = 1/r$, and $s \to \phi$, then
+\begin{equation}
+  \label{eq:171}
+  \dv[2]{u}{\phi} + u = 3 M u^2
+\end{equation}
+Ignoring the right hand side, a particular integral is 
+\begin{equation}
+  \label{eq:172}
+  u = \frac{\cos(\phi)}{r~{min}}
+\end{equation}
+Following the same approach as before, and using equation
+(\ref{eq:172}) to substitute into the right hand side of equation
+(\ref{eq:171}),
+\begin{equation}
+  \label{eq:173}
+  \dv[2]{u}{\phi} + u = \frac{3M}{r^2~{min}} \cos[2](\phi) = \frac{3M}{2 r^2~{min}} (1 + \cos(2 \phi))
+\end{equation}
+A particular integral for this approximation is then
+\begin{equation}
+  \label{eq:174}
+  u = \frac{3M}{2 r^2~{min}} \qty(1 - \frac{1}{3} \cos(2 \phi) )
+\end{equation}
+and it follows that the general solution to equation (\ref{eq:171}) is
+\begin{equation}
+  \label{eq:175}
+  u = \frac{\cos(\phi)}{r~{min}} + \frac{3M}{2 r^2~{min}} \qty( 1 - \frac{1}{3} \cos(2 \phi) )
+\end{equation}
+we can rewrite this using the asymptotic directions of the photon, so the outgoing photon has
+\begin{equation*}
+  \label{eq:176}
+  u = \frac{\cos( \frac{\pi}{2} + \frac{\Delta \phi}{2})}{r~{min}} + \frac{3 M}{2 r^2~{min}} \qty[1-\frac{1}{3} \cos(\pi + \Delta \phi) ]
+\end{equation*}
+which simplifies to
+\begin{equation}
+  \label{eq:177}
+    u = -\frac{\sin(\frac{\Delta \phi}{2})}{r~{min}} + \frac{3 M}{2 r^2~{min}} \qty[1-\frac{1}{3} \cos(\Delta \phi) ]
+\end{equation}
+and since $\Delta \phi \ll 1$,
+\begin{equation}
+  \label{eq:178}
+  u = - \frac{\Delta \phi}{2 r~{min}} + \frac{2M}{r^2~{min}}
+\end{equation}
+Then setting $u=0$ (i.e. $r \to \infty$), we get the general relativisitic result,
+\begin{equation}
+  \label{eq:179}
+  \Delta \phi = \frac{4 M}{r~{min}} \equiv \frac{4 GM}{c^2 r~{min}} = \frac{2 R~S}{r~{min}}
+\end{equation}
+This is twice the Newtonian deflection. If we take $r~{min}$ to be a
+solar radius, and $M$ to be a solar mass, we find the deflection
+caused by the sun to be $1.77$ arcseconds, which was observed by
+Arthur Eddington during a solar eclipse.
+
+\subsection{Lensing}
+\label{sec:lensing}
+
+\begin{figure}[b]
+  \centering
+  \begin{tikzpicture}[scale=0.8]
+    \node (O) at (0,0) {$O$}; 
+    \node (M) at (5,0) {$M$};
+\node (P) at (5,2) {$P$};
+\node (S) at (10,0) {$S$};
+\draw (O) to (P); 
+\draw [<->] (O) to (M);
+\draw (2.5, 0) node [fill=white]  {$D_L$};
+\draw [<->] (M) to (S);
+\draw (7.5,0) node [fill=white] {$D_S-D_L$};
+\draw [<->] (P) to (M);
+\draw (5,1) node [fill=white] {$R~E$};
+\node (S') at (10,4) {$S'$};
+\draw [dotted] (P) to (S');
+\draw [bend right] (0:1) to (22:1);
+\node at (11:1.5) {$\theta~E$};
+\draw [help lines] (P) to (S);
+\draw [bend left] (S) -- +(0:-1) to +(-22:-1);
+\node at ($(S)+(-11:-1.5)$) {$\beta$};
+\draw [bend left]($(P)+(22:1)$) to ($(P)+(-22:1)$);
+\draw ($(P)+(0:.75)$) node {$\alpha$};
+  \end{tikzpicture}
+  \caption{The geometrical arrangement leading to gravitational lensing about a mass $M$.}
+  \label{fig:lensing}
+\end{figure}
+
+Consider a light ray from a distant source (see figure
+\ref{fig:lensing}) being deflected through an angle $\alpha$ by a mass
+$M$. The angle of deflection is small, so can be approximated by a
+thin-lensing situation, with the lens lying along the line $OP$, with
+$P$ a distance $R~E$ from $M$. The ray path is then approximated by
+$OP$ and $PS$. By symmetry all points on the locus described by $R~E$
+produce lensing, so a ring is formed (figure \ref{fig:lensing-2}),
+which is called an \emph{Einstein ring}.
+
+The ring has an angular radius $\theta~E$, which can be found by
+considering the distance $D_L$ to the lens and $D_S$ to the source,
+from the observer at $O$. Then (see figure \ref{fig:lensing}) 
+\[ \theta~E + \beta = \alpha \]
+and 
+\[ \theta~E = \frac{R~E}{D_L} \]
+also
+\[ \beta = \frac{R~E}{D_S - D_L} = \theta~E \frac{D_L}{D_S-D_L} \]
+Then, making appropriate substitutions,
+\begin{equation*}
+  \label{eq:180}
+  \theta~E + \theta~E \frac{D_L}{D_S-D_L} = \theta~E \frac{D_S}{D_S - D_L} = \frac{4M}{R~E} = \frac{4M}{D_L \theta~E}
+\end{equation*}
+Thus
+\begin{equation}
+  \label{eq:181}
+  \theta~E = \sqrt{ \frac{4M (D_S-D_L)}{D_SD_L} }
+\end{equation}
+then, substituting $x = D_L/D_S$,
+\begin{equation}
+  \label{eq:182}
+  \theta~E = \sqrt{ \frac{4M(1-x)}{D_S x}}
+\end{equation}
+
+If the lensing mass is not a spherically symmetric distribution
+exactly aligned between the observer and the source the ring is not
+produced, but instead an (odd) number of images are formed with an
+angular separation on the order of $\theta~E$.
+
+We can make some simplifications to get some convenient equations for
+lensing. Suppose the source is a distant quasar lensed by a foreground
+galaxy, then
+\begin{equation}
+  \label{eq:183}
+  \theta~E \approx 3" \sqrt{ \frac{M}{10^{12} M_{\odot}} \frac{10^9\, \text{pc}}{D_S} \frac{(1-x)}{x} }
+\end{equation}
+This regime is \emph{strong lensing}, and separations are on the order
+of a few arcseconds. Several hundreds of examples of strong lenses exist.
+
+If the source objects are within the Galaxy,
+\begin{equation}
+  \label{eq:184}
+  \theta~E \approx 0.9\, \text{mas} \sqrt{ \frac{M}{M_{\odot}} \frac{10\,\text{kpc}}{D_S} \frac{(1-x)}{x}}
+\end{equation}
+So the images are close enough that resolving them is difficult (but
+within the power of e.g. GAIA), and this regime is \emph{gravitational
+  microlensing}.
+
+\begin{figure}[b]
+  \centering
+  \begin{tikzpicture}[scale=0.6]
+%\clip (0, -1) rectangle (10, 2.5);
+    \node (O) at (0,0) {$O$}; 
+    \coordinate (M) at (5,0);
+\coordinate (P) at (5,2);
+\coordinate (P') at (5,-2) {};
+\node (S) at (10,0) {$S$};
+\draw (O) to (P); \draw (O) to (P');
+\coordinate (S') at (10,4);
+\draw [dotted] (P) to (S');
+\draw [bend right] (0:1) to (22:1);
+\node at (11:1.5) {$\theta~E$};
+\draw [help lines] (P) to (S) (P') to (S); 
+\draw [bend left]($(P)+(22:1)$) to ($(P)+(-22:1)$);
+\draw ($(P)+(0:.75)$) node {$\alpha$};
+\draw [ultra thick] (S) ellipse (2 and 4);
+\fill (M) circle (0.05) node [above] {$M$};
+
+  \end{tikzpicture}
+  \caption{The production of an \emph{Einstein ring}.}
+  \label{fig:lensing-2}
+\end{figure}
+
+\section{Gravitational redshift}
+\label{sec:grav-redsh-1}
+
+Suppose light is emitted with the coordinates $(t_e,r_e)$ in the
+Schwarzschild metric, and travels along a radial null geodesic to
+reach an observer at an event $(t_o, r_o)$, then
+\begin{equation}
+  \label{eq:185}
+  \dd{s}^2 = 0 = - \qty( 1 - \frac{2M}{r} ) \dd{t}^2 + \frac{\dd{r}^2}{1 - 2M/r}
+\end{equation}
+thus
+\begin{equation}
+  \label{eq:186}
+  \int_{t_e}^{t_o} \dd{t} = t_o - t_e = \int_{r_e}^{r_o} \frac{\dd{r}}{1 - 2M/r}
+\end{equation}
+A wave with rest-frame frequency $\nu_0$ will have wavecrests leave
+$r_e$ at $t_e$ and $t_e + \Delta t_e$, which reach $r_o$ at $t_o$ and
+$t_o+\Delta t_e$, so the proper time difference between emissions is
+\begin{equation}
+  \label{eq:187}
+  \Delta \tau_e = \Delta t_e \sqrt{1 - \frac{2M}{r_e}} \equiv \frac{1}{\nu_e} \equiv {\lambda_e}
+\end{equation}
+and between detections is
+\begin{equation}
+  \label{eq:188}
+  \Delta \tau_o = \Delta t_e \sqrt{1 - \frac{2M}{r_o}} \equiv \frac{1}{\nu_o} \equiv \lambda_o
+\end{equation}
+so the redshift, $z$, is
+\begin{equation}
+  \label{eq:189}
+  z = \frac{\lambda_o - \lambda_e}{\lambda_e} = \sqrt{ \frac{1-2M/r_o}{1-2M/r_e}} - 1 = \sqrt{\frac{r_e(r_o-R~S)}{r_o(r_e-R~S)}}-1
+\end{equation}
+for $R~S$ the Schwarzschild radius of the mass $M$.
+
+\section{Gravitational time delay}
+\label{sec:grav-time-delay}
+
+Gravitational time delay has two constributions; a geometric one, and
+a gravitational one, the Shapiro effect.
+
+Taking the Schwarzschild invariant interval, and introducing 
+\begin{equation}
+  \label{eq:190}
+  r = R \qty(1+\frac{M}{2R})^2
+\end{equation}
+then assuming a weak gravitational field, with $M \ll r$ and so $M \ll R$,
+\begin{equation}
+  \label{eq:191}
+  r approx R \qty(1+ \frac{M}{R})
+\end{equation}
+and noting \[ 1 - \frac{2M}{r} = \frac{r-2M}{r} \]
+we can produce the Schwarzschild metric in the form
+\begin{equation}
+  \label{eq:192}
+\begin{split}
+  \dd{s}^2 = - \qty( \frac{1-M/R}{1+M/R} ) \dd{t}^2 + \qty(\frac{1+M/R}{1-M/R}) \dd{r}^2 \\
++R^2 \qty( 1 + \frac{M}{R})^2 \qty[ \dd{\theta}^2 + \sin[2](\theta) \dd{\phi}^2]
+\end{split}
+\end{equation}
+Using the binomial expansion,
+\[ (1+x)^n \approx 1+ nx \]
+and, noting that to first order $\dd{r} = \dd{R}$,
+\begin{equation}
+  \label{eq:194}
+  \begin{split}
+    \dd{s}^2 = - \qty(1 - \frac{2M}{R}) \dd{t}^2 \\
++ \qty(1+\frac{2M}{R}) \qty[ \dd{R}^2 + R^2 \dd{\theta}^2 + R^2 \sin[2](\theta) \dd{\phi}^2]
+  \end{split}
+\end{equation}
+Then, defining the Cartesian coordinates,
+\begin{equation}
+  \label{eq:195}
+  X = R \sin(\theta) \cos(\theta), \quad Y=R \sin(\theta) \sin(\phi), \quad Z = R \cos(\theta)
+\end{equation}
+and introducing the gravitational potential,
+\[ \psi = - \frac{GM}{R} \]
+The interval becomes
+\begin{equation}
+  \label{eq:196}
+  \dd{s}^2 = -(1+2\psi) \dd{t}^2 + (1-2\psi) [\dd{X}^2 + \dd{Y}^2 + \dd{Z}^2]
+\end{equation}
+
+Consider a photon which propagates from a source at $A$ to an observer
+at $B$ past a deflecting mass $M$, which is small, so we assume the
+trajectory is straight in space, and align the coordinates so the
+$z$-axis is along the line of propagation, so $\dd{x}=\dd{y}=0$, so
+\begin{equation}
+  \label{eq:197}
+  \dd{s}^2 = - (1+2 \phi) \dd{t}^2 + (1-2 \psi) \dd{z}^2
+\end{equation}
+Since $\dd{s}^2 = 0$, to first order,
+\begin{equation}
+  \label{eq:198}
+  \dd{t}^2 = \frac{1-2\psi}{1+2\psi} \dd{z}^2 \approx (1-2\psi)^2 \dd{z}^2
+\end{equation}
+Then $\int \dd{t} = \int(1-2\phi) \dd{z}$, so
+\begin{equation}
+  \label{eq:199}
+  t~B - t~A = (z~B - z~A) - 2 \int_{z~A}^{z~B} \psi(z) \dd{z}
+\end{equation}
+With the second term being the time delay due to gravity,
+\begin{equation}
+  \label{eq:200}
+  \delta t~{grav} = -2 \int_{z~A}^{z~B} \psi(z) \dd{z} \equiv -\frac{2}{c^3} \int_{z~A}^{z~B} \psi(z) \dd{z}
+\end{equation}
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "../project"
+%%% End: 

@@ -3,7 +3,7 @@ Multimessenger observations
 ***************************
 
 The advent of the first binary neutron star observation,
-GW170817 :raw-latex:`\cite{2017PhRvL.119p1101A}`, to be observed by
+GW170817 :cite:`2017PhRvL.119p1101A`, to be observed by
 detectors served as the advent of a new era in observational
 astrophysics, with now able to sit alongside conventional
 electromagnetic observations to probe the astrophysical nature of some
@@ -12,7 +12,7 @@ of the most extreme events in the universe.
 When the same astrophysical object or event is observed through multiple
 different observational approaches, or *messengers* the event is deemed
 to be a event. There are four messengers of which observations are
-currently made: radiation, , , and cosmic rays  [1]_.
+currently made: electromagnetic radiation, gravitational waves, high-energy particles, and cosmic rays  [1]_.
 
 Multimessenger astronomy: A very brief history
 ==============================================
@@ -20,7 +20,7 @@ Multimessenger astronomy: A very brief history
 While the discovery of GW170817 marked the beginning of with , it did
 not mark the beginning of as a field. The earliest observations can be
 traced to astroparticle observations of the solar flares in the
-1940s :raw-latex:`\cite{2015paas.book.....S}`. The observation of
+1940s :cite:`2015paas.book.....S`. The observation of
 SN1987A, a type-II supernova in the Large Magellanic Cloud, was made
 first in visible light at Las Campanas, but also later in ultraviolet.
 Around three hours prior to the event’s detection in , a number of
@@ -57,9 +57,9 @@ emission, despite being the most frequently observed source of , and the
 result of the most energetic events in the observed universe. There has,
 however, been speculation that under certain circumstances emission
 could be produced as a result of a
-coalescence :raw-latex:`\cite{2016ApJ...819L..21L,2017ApJ...839L...7D}`,
+coalescence :cite:`2016ApJ...819L..21L,2017ApJ...839L...7D`,
 partly driven by the apparent observation of gamma rays around following
-the signal from GW150914 :raw-latex:`\cite{2016ApJ...826L...6C}`  [2]_.
+the signal from GW150914 :cite:`2016ApJ...826L...6C}`  [2]_.
 
 Neutron star coalescences
 -------------------------
@@ -80,7 +80,7 @@ they are the engine for at least a subset of observed .
 
 kilonova
     UV through IR emission from nuclear processes in the
-    ejecta :raw-latex:`\cite{2010MNRAS.406.2650M}`.
+    ejecta :cite:`2010MNRAS.406.2650M`.
 
 radio emission
     Resulting from the interaction of the jet with the interstellar
@@ -102,9 +102,9 @@ also have been a supernova). The first observation of a occurred in
 1987, SN 1987A, which was close enough (in the Large Magellanic Cloud)
 that it could be observed in detail as it evolved. are known to emit
 thermal neutrinos (neutrinos were detected from SN
-1987A :raw-latex:`\cite{1988PhRvD..38..448H}`) and there are potential
+1987A :cite:`1988PhRvD..38..448H`) and there are potential
 mechanisms for the production of high energy neutrinos in as
-well :raw-latex:`\cite{2019arXiv190712506M}`. We expect to be produced
+well :cite:`2019arXiv190712506M`. We expect to be produced
 during a core-collapse thanks to the asymmetrical nature of the
 explosion, but the physics of are poorly understood, and as a result the
 strength of signals from is unknown.
@@ -144,7 +144,7 @@ producing as it rotates. To date no from pulsars have been observed, and
 this allows an upper limit to be placed on the size of any mountains on
 the surface of nearby pulsars (as of O2 the largest mountain would be
 around :math:`\SI{5}{\centi\meter}`
-:raw-latex:`\cite{2019PhRvD..99l2002A}`  [3]_).
+:cite:`2019PhRvD..99l2002A`  [3]_).
 
 Preparing GW alerts
 ===================
@@ -243,7 +243,7 @@ system merges in the waveform.
 The , :math:`\chirpmass`, can be determined if the frequency,
 :math:`f_{\text{GW}}`, and the frequency derivative,
 :math:`\dot{f}_{\text{GW}}`, with respect to time of the are
-measured :raw-latex:`\cite{2017AnP...52900209A}`:
+measured :cite:`2017AnP...52900209A`:
 
 .. math::
 
@@ -346,7 +346,7 @@ catalogues such as Messier’s in the 18th Century, the ability to conduct
 a survey over a very large area of the sky very rapidly has only become
 possible thanks to development in both sensor technology and data
 processing techniques in the last decade. A current example of such a
-survey telescope is the  :raw-latex:`\cite{2014htu..conf...27B}`, which
+survey telescope is the :cite:`2014htu..conf...27B`, which
 is capable of imaging a 47 square degree area of the sky in a single
 exposure, allowing the entire Northern hemisphere sky to be imaged every
 three nights, to a limiting magnitude around 20.5. The produces large
@@ -359,9 +359,9 @@ challenge to both data processing and analysis. Other important
 programmes in transient astronomy include the One-Meter Two-Hemisphere
 collaboration (comprising the Swope Supernova Survey in Chile, and the
 Nickel Telescope in California) who were the first to discover the
-optical counterpart to GW170817 :raw-latex:`\cite{2017Sci...358.1556C}`,
+optical counterpart to GW170817 :cite:`2017Sci...358.1556C`,
 and on a somewhat longer timescale, ESA’s *Gaia*
-mission :raw-latex:`\cite{2019IAUS..339...12B}`.
+mission :cite:`2019IAUS..339...12B`.
 
 Challenges for GW event follow-up
 =================================
@@ -380,7 +380,7 @@ observing “tiles” by each follow-up observatory . The size of each tile
 will vary depending on the sensitivity and field-of-view of the
 telescope. Each tile is then prioritised using probability information
 from the
-analysis :raw-latex:`\cite{2017ApJ...834...84C,2019MNRAS.489.5775C}`,
+analysis :cite:`2017ApJ...834...84C,2019MNRAS.489.5775C`,
 and taking into account difficulties in moving the telescope and the
 period of local night.
 
@@ -414,9 +414,9 @@ The three-detector localisation was calculated by around 17:54 UTC,
 which allowed telescopes in South America to search the localisation
 area for an optical transient  [5]_. The Swope supernova survey was the
 first collaboration to observe the
-transient :raw-latex:`\cite{2017ApJ...848L..12A,2017Sci...358.1556C}`
+transient :cite:`2017ApJ...848L..12A,2017Sci...358.1556C`
 (although six observatories would independently discover the optical
-counterpart :raw-latex:`\cite{2017ApJ...848L..12A}`). The optical
+counterpart :cite:`2017ApJ...848L..12A`). The optical
 counterpart was observed in NGC 4993.
 
 The highly-precise localisation which was produced by imaging the
@@ -430,8 +430,8 @@ by the VLA in New Mexico.
 
 observations continued until 2019, with the Hubble Space Telescope
 unable to detect any optical afterglow after 584
-days :raw-latex:`\cite{2019ApJ...883L...1F}`. Superluminal radio
-emission was also reported :raw-latex:`\cite{2018Natur.561..355M}`
+days :cite:`2019ApJ...883L...1F`. Superluminal radio
+emission was also reported :cite:`2018Natur.561..355M`
 between 75 and 230 days after the merger.
 
 Cosmology from multimessenger astronomy
@@ -462,7 +462,7 @@ and the measured recession velocity is
 
 This allowed :math:`H_{0}` to be inferred to be
 :math:`\SI[parse-numbers=false]{70.0^{+12.0}_{-8.0}}{\kilo\meter\ \second^{-1}\ \mega\parsec^{-1}}`
-:raw-latex:`\cite{2017Natur.551...85A}`.
+ :cite:`2017Natur.551...85A`.
 
 .. figure:: figures/H0-inference
    :alt: The posterior probability density function of the inferred
@@ -490,23 +490,23 @@ identifying a list of galaxies which lie within the localised volume
 (through the sky localisation and distance estimate of the ) we can use
 a Bayesian analysis to combine the inferences from each plausible galaxy
 to give an overall
-estimate :raw-latex:`\cite{2019arXiv190806050G,2019arXiv190806060T}`.
+estimate :cite:`2019arXiv190806050G,2019arXiv190806060T`.
 
 From the first two observation runs’ detections it is possible to update
 the GW170817-only estimate of :math:`H_{0}` to
 :math:`\SI[parse-numbers=false]{68.0^{+14.0}_{-7.0}}{\kilo\meter\ \second^{-1}\  \mega\parsec^{-1}}`
-:raw-latex:`\cite{2019arXiv190806060T}`.
+ :cite:`2019arXiv190806060T`.
 
 .. figure:: figures/H0-statistical
    :alt: The posterior probability density function for :math:`H_{0}`
    inferred using a statistical method and observations from the O1 and
    O2 observing runs for advanced LIGO and Virgo.
-   :raw-latex:`\cite{2019arXiv190806050G,2019arXiv190806060T}`
+    :cite:`2019arXiv190806050G,2019arXiv190806060T`
 
    The posterior probability density function for :math:`H_{0}` inferred
    using a statistical method and observations from the O1 and O2
    observing runs for advanced LIGO and Virgo.
-   :raw-latex:`\cite{2019arXiv190806050G,2019arXiv190806060T}`
+    :cite:`2019arXiv190806050G,2019arXiv190806060T`
 
 GW follow-up of EM events
 =========================
@@ -521,7 +521,7 @@ appropriate area of sky, for example).
 
 There have been targeted searches for from , motivated by observations.
 The sky localisation provided by the observation simplifies the process
-of searching for the signal :raw-latex:`\cite{2019arXiv190803584T}`.
+of searching for the signal :cite:`2019arXiv190803584T`.
 
 Pulsars are the most promising source of continuous , and since these
 are observed by radio telescopes, which can determine their rotation
@@ -530,20 +530,20 @@ and frequency (the frequency is twice the rotation frequency, since are
 emitted from the quadrupole mode). To date we’ve not been successful in
 detecting from pulsars, but the non-detection allows us to place limits
 on the physical properties of known
-pulsars :raw-latex:`\cite{2019PhRvD..99l2002A}`. Pulsars are also
+pulsars :cite:`2019PhRvD..99l2002A`. Pulsars are also
 observed to *glitch* when observed in radio: a glitch is a sudden change
 in the rotational frequency of the pulsar; the mechanism which causes
 these is poorly understood, but may produce . The time at which these
 glitches occur is well known from observations, so searches for these
 can be carried out over a short stretch of
-data :raw-latex:`\cite{2019PhRvD.100f4058K}`.
+data :cite:`2019PhRvD.100f4058K`.
 
 Observations are made of frequently, and events are known to be a
 progenitor source for these events. These events are very well localised
 in time, however gamma ray detectors are not normally able to give a
 very precise sky localisation for an event, so a search can be made over
 a short span of detector data, but a large sky
-area :raw-latex:`\cite{2019arXiv190701443T}`.
+area :cite:`2019arXiv190701443T`.
 
 The future: multi-band multimessenger astronomy
 ===============================================
@@ -557,7 +557,7 @@ for a much longer period of time than is currently possible.
 
 For an inspiralling event the frequency of the inspiral signal can be
 used to predict the time at which the two systems will
-merge :raw-latex:`\cite{1994PhRvD..50.7111S}`. This means if the lowest
+merge :cite:`1994PhRvD..50.7111S`. This means if the lowest
 frequency a detector can measure an inspiral signal at is
 :math:`f_{\text{low}}` then the time, :math:`t`, between observing the
 start of the inspiral and the merger is approximately
@@ -601,7 +601,7 @@ start of the inspiral and the merger is approximately
 .. [4]
    For a fuller discussion of the effects of spin and the orbit on the
    determination of the orbital compactness see section 4
-   of :raw-latex:`\cite{2017AnP...52900209A}`.
+   of :cite:`2017AnP...52900209A`.
 
 .. [5]
    The search was complicated by the proximity of the search region to
