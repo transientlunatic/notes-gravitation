@@ -1,108 +1,119 @@
-***************
-Lie Derivatives
-***************
+*********************
+Calculus on manifolds
+*********************
 
-
-A congruence is a set of curves which fill a manifold, or some part of
-it without intersecting. Each point is on only one curve, and as each
-curve is a 1D collection of points we can assemble the curves into an
-(:math:`n-1`)-dimensional manifold. The congruence thus provides a
-mapping from the manifold back onto itself. If the parameter on the
-curves is :math:`\lambda` then any small number :math:`\Delta \lambda`
-defines a mapping in which each point is moved :math:`\Delta \lambda`
-further along the same curve. If this map exists for all
-:math:`\Delta \lambda` then there is a 1D differentiable family of such
-mappings forms a Lie Group with the composition law
-:math:`\Delta \lambda_1 + \Delta \lambda_2`. Such a mapping is a Lie
-dragging.
-
-For a function :math:`f` defined on a manifold the Lie dragging defines
-a function :math:`f^{*}_{\Delta\lambda}` such that if a point :math:`P`
-was mapped to a point :math:`Q`, after moving along the curve the new
-field :math:`f^{*}_{\Delta \lambda}` has the same value at :math:`Q` as
-:math:`f` had at :math:`P`, that is
-
-.. math:: f(P) = f^{*}_{\Delta \lambda} (Q)
-
-If :math:`f^{*}_{\Delta \lambda} (Q)
-= F(Q)` for all :math:`Q` the function is invariant under the mapping.
-If it is invariant under all :math:`\Delta \lambda` then it is Lie
-Dragged by the field :math:`\df{\lambda}`.
-
-In the limit of infinitessimal :math:`\Delta \lambda` and infinitessimal
-separation between two curves, :math:`(1)` and :math:`(2)`, if
-:math:`\dv{\mu}` at the point :math:`P` stretches from :math:`P` to
-:math:`R` along :math:`(A)`, then :math:`\dv{\mu^{*}_{\Delta \lambda}}`
-will stretch from :math:`Q` to :math:`S` on :math:`(A')`. If
-:math:`\dv{\mu}` is Lie dragged, then it will also stretch from
-:math:`Q` to :math:`S`, implying
-:math:`\comm{\dv{\lambda}}{\dv{\mu}} = 0`. Thus a vector field is Lie
-dragged if its Lie Bracket with the dragging field vanishes.
+.. include:: macros.rst
 
 Lie Derivatives
 ===============
+	     
+It can be helpful to define a notion of a derivative over a manifold without needing to refer to a coordinate system.
+This is problematic thanks to the lack of a consistent definition of distance over an entire manifold.
+It is, however, possible to define curves on a manifold, which can have parameter values which map back to :math:`\mathbb{R}`, and it is these curves which the Lie derivative uses to define a notion of distance.
 
-The concept of dragging permits the definition of a derivative along the
-congruence. There is a problem of defining distance in vector and tensor
-fields; for a curve between points the distance is the difference in the
-curves parameter for the two points. Another onsideration is whether two
-vectors at different points are parallel or not. On a simple manifold
-there is no sense of this question, as there is no way to move vecors
-around in a parallel manner, and for this we need an affine connection.
-However, the notion of congruence can provide a substitute; to compare
-vectors at points :math:`\lambda` and :math:`\lambda + \Delta \lambda`
-on a given curve we can Lie drag the vector at
-:math:`\lambda + \Delta \lambda` back to :math:`\lambda`, defining a new
-vector at :math:`\lambda`, which can be subtracted from the old one,
-giving the difference between them which is unique given the congruence.
+	     
+Congruences
+-----------
+	     
+It is important to be able to define the notion of a set of paths over a manifold.
+
+A congruence is a set of curves which fill a manifold, or some part of it without intersecting.
+
+Each point is on only one curve, and as each curve is a 1D collection of points we can assemble the curves into an (:math:`n-1`)-dimensional manifold. The congruence thus provides a mapping from the manifold back onto itself.
+
+.. glossary::
+
+   congruence
+      A congruence is a set of integral curves on a manifold which is defined by a non-vanishing vector field.
+
+With this notion of a congruence it is useful to think about how functions will behave across the manifold.
+To do this we consider sliding, or "dragging" them along congruences, and seeing how they behave.
+      
+Lie dragging
+------------
+      
+If the parameter on the curves is :math:`\lambda` then any small number :math:`\Delta \lambda` defines a mapping :math:`\lambda \to \Delta \lambda` in which each point is moved :math:`\Delta \lambda` further along the same curve.
+
+If this map exists for all :math:`\Delta \lambda` then there is a 1D differentiable family of such mappings, which forms a Lie Group with the composition law
+:math:`\Delta \lambda_1 + \Delta \lambda_2`.
+
+Such a mapping is a Lie dragging.
+
+Lie dragging a function
+-----------------------
+
+For a function :math:`f` defined on a manifold the Lie dragging defines a function :math:`f^{*}_{\Delta\lambda}` such that if a point :math:`P`
+was mapped to a point :math:`Q`, after moving along the curve the new field :math:`f^{*}_{\Delta \lambda}` has the same value at :math:`Q` as :math:`f` had at :math:`P`, that is
+
+.. math:: f(P) = f^{*}_{\Delta \lambda} (Q)
+
+If :math:`f^{*}_{\Delta \lambda} (Q) = F(Q)` for all :math:`Q` the function is invariant under the mapping.
+If it is invariant under all :math:`\Delta \lambda` then it is **Lie Dragged** by the field :math:`\frac{\dd}{\dd \lambda}`.
+Because of this, a Lie dragged function will have :math:`\frac{\dd f}{\dd \lambda} = 0`.
+
+Lie dragging a vector field
+---------------------------
+
+In the limit of infinitessimal :math:`\Delta \lambda` and infinitessimal separation between two curves, :math:`(1)` and :math:`(2)`, if :math:`\frac{\dd}{\dd \mu}` at the point :math:`P` stretches from :math:`P` to :math:`R` along :math:`(A)`, then :math:`\frac{\dd}{\dd \mu^{*}_{\Delta \lambda}}`
+will stretch from :math:`Q` to :math:`S` on :math:`(A')`.
+If  :math:`\frac{\dd}{\dd\mu}` is Lie dragged, then it will also stretch from :math:`Q` to :math:`S`, implying
+
+.. math::`\left[\frac{\dd}{\dd \lambda}, \frac{\dd}{\dd \mu} \right] = 0.`
+      
+Thus a vector field is Lie dragged if its Lie Bracket with the dragging field vanishes.
+
+The Lie Derivative
+------------------
+
+The concept of dragging permits the definition of a derivative along the congruence.
+There is a problem of defining distance in vector and tensor fields; for a curve between points the distance is the difference in the
+curves parameter for the two points.
+Another consideration is whether two vectors at different points are parallel or not.
+
+On a simple manifold there is no sense in this question, as there is no way to move vectors around in a parallel manner, and for this we need an affine connection.
+However, the notion of congruence can provide a substitute; to compare vectors at points :math:`\lambda` and :math:`\lambda + \Delta \lambda`
+on a given curve we can Lie drag the vector at :math:`\lambda + \Delta \lambda` back to :math:`\lambda`, defining a new vector at :math:`\lambda`, which can be subtracted from the old one, giving the difference between them which is unique given the congruence.
+
 This allows the definition of a derivative of the form
 
 .. math::
+   :label: def-lie-derivative
 
-   \label{eq:18}
-     \begin{split}
-        \lim_{\Delta \lambda \to 0} \frac{f^{*}(\lambda_0) - f(\lambda_0)}{\Delta \lambda} = \lim_{\Delta \lambda \to 0} \frac{f(\lambda_0 + \Delta \lambda) - f(\lambda_0)}{\Delta \lambda} \\= \qty[ \dv{f}{\lambda}]_{\lambda_0}
-      \end{split}
+        \lim_{\Delta \lambda \to 0} \frac{f^{*}(\lambda_0) - f(\lambda_0)}{\Delta \lambda} = \lim_{\Delta \lambda \to 0} \frac{f(\lambda_0 + \Delta \lambda) - f(\lambda_0)}{\Delta \lambda} = \left[ \frac{\dd f}{\dd \lambda}\right]_{\lambda_0}
 
- We can define an operator for this derivative, :math:`\ld{V}{}` with
-:math:`V` the vector field generating the mappings, so
+We can define an operator for this derivative, :math:`\ld_V` with :math:`V` the vector field generating the mappings, so
 
 .. math::
+   :label: lie-derivative-function
+	   
+    \ld_{V} f = V(f) = \frac{\dd f}{\dd \lambda}
 
-   \label{eq:19}
-     \ld{V}{f} = V(f) = \dv{f}{\lambda}
-
- Carrying out the same procedure on a field :math:`U = \dv{\mu}`, and
-considering the definition of a vector in terms of its effect on
-functions, so we define an arbitrary function :math:`f`. At
+Carrying out the same procedure on a field :math:`U = \frac{\dd}{\dd \mu}`, and considering the definition of a vector in terms of its effect on functions, so we define an arbitrary function :math:`f`.
+At
 :math:`\lambda_0` the field :math:`U` gives the derivative
-:math:`\qty(\dv{f}{\mu})_{\lambda_0}` and at
-:math:`\qty(\dv{f}{\mu})_{\lambda_0 + \Delta \lambda}`; by dragging
+:math:`\left(\frac{\dd f}{\dd \mu}\right)_{\lambda_0}` and at
+:math:`\left(\frac{\dd f}{\dd \mu}\right)_{\lambda_0 + \Delta \lambda}`; by dragging
 :math:`U(\lambda_0 + \Delta \lambda)` we get a new field
-:math:`U^{*}=\dv{\mu^{*}}`, then :math:`\comm{U^{*}}{V} = 0`, and
-:math:`U^{*}(\lambda_0
-+ \Delta \lambda) = U(\lambda_0+\Delta \lambda)`. The vanishing
-commutator implies
+:math:`U^{*}=\frac{\dd}{\dd \mu^{*}}`, then :math:`[U^{*}, V] = 0`, and
+:math:`U^{*}(\lambda_0 + \Delta \lambda) = U(\lambda_0+\Delta \lambda)`.
+
+The vanishing commutator implies
+
+.. math::
+   
+   \frac{\dd}{\dd \lambda} \frac{\dd}{\dd \mu^{*}} f = \frac{\dd}{\dd \mu^{*}} \frac{\dd}{\dd \lambda} f
+
+We then define the Lie derivative :math:`\ld_V U` as the vector field operating on :math:`f` to give
 
 .. math::
 
-   \label{eq:20}
-     \dv{\lambda} \dv{\mu^{*}} f = \dv{\mu^{*}} \dv{\lambda} f
+   \left[ \ld_V {U} \right] (f) = \lim_{\Delta \lambda \to 0} \left( \frac{\dd}{\dd \lambda} \frac{\dd}{\dd \mu} f - \frac{\dd}{\dd \mu^{*}} \frac{\dd}{\dd \lambda} f \right)
 
- We then define the Lie derivative :math:`\ld{V}{U}` as the vector field
-operating on :math:`f` to give
+This is true for all :math:`f`, so
 
 .. math::
 
-   \label{eq:21}
-     \qty[ \ld{V}{U}](f) = \lim_{\Delta \lambda \to 0} \qty( \dv{\lambda} \dv{\mu} f - \dv{\mu^{*}} \dv{\lambda} f)
-
- This is true for all :math:`f`, so
-
-.. math::
-
-   \label{eq:22}
-     \ld{V}{U} = \dv{\lambda} U - \dv{\mu} V = \comm{V}{U}
+   \ld_{V} {U} = \frac{\dd}{\dd\lambda} U - \frac{\dd}{\dd \mu} V = [{V},{U}]
 
 Lie Derivatives of a One-form
 -----------------------------

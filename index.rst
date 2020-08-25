@@ -53,6 +53,10 @@ Gravitational wave astronomy and astrophysics
    gw-conventions
    sources
    mma-observation
+
+.. toctree::
+   :caption: Extras
+	     
    zbibliography
    glossary
    

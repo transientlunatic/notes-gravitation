@@ -1,6 +1,6 @@
 .. math::
    
-   \def\rn{\mathbb{R}}
+   \def\rn{\mathbb{R}}  \def\ld{£}
    \def\half{\frac{1}{2}}
    \def\dd{\ \!\mathrm{d}}
    \def\dvvp#1#2{\frac{\partial #1}{\partial #2}}
