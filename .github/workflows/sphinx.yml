@@ -15,13 +15,20 @@ jobs:
       uses: actions/setup-python@v2
       with:
         python-version: 3.7
+    - name: Setup ImageMagick
+      run: |
+        mkdir /tmp/imagick
+        echo "<policymap>
+<policy domain="coder" rights="read | write" pattern="PDF" />
+</policymap>" >> /tmp/imagick/policy.xml
+        export MAGICK_CONFIGURE_PATH='/tmp/imagick/:$MAGICK_CONFIGURE_PATH' identify -list policy
+        export MAGICK_CONFIGURE_PATH='/tmp/imagick/:$MAGICK_CONFIGURE_PATH' identify -list resource
     - name: Build HTML
       run: |
         pip install sphinx
         pip install kentigern
         
         make html
-        
     - name: SCP Deploy HTML
       # You may pin to the exact commit or the version.
       # uses: horochx/deploy-via-scp@bf9a636d9a475a714e375ba1cc455d1c5c861aef
