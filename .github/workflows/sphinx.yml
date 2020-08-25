@@ -13,7 +13,6 @@ jobs:
     - uses: actions/checkout@v2
     - name: Build HTML
       run: |
-        pip install -r requirements.txt
         pip install sphinx
         pip install kentigern
         
