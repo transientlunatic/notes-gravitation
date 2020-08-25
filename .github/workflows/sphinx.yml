@@ -18,9 +18,7 @@ jobs:
     - name: Setup ImageMagick
       run: |
         mkdir /tmp/imagick
-        echo "<policymap>
-<policy domain="coder" rights="read | write" pattern="PDF" />
-</policymap>" >> /tmp/imagick/policy.xml
+        echo '<policymap><policy domain="coder" rights="read | write" pattern="PDF" /></policymap>' >> /tmp/imagick/policy.xml
         export MAGICK_CONFIGURE_PATH='/tmp/imagick/:$MAGICK_CONFIGURE_PATH' identify -list policy
         export MAGICK_CONFIGURE_PATH='/tmp/imagick/:$MAGICK_CONFIGURE_PATH' identify -list resource
     - name: Build HTML
