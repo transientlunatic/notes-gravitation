@@ -1,0 +1,36 @@
+name: Sphinx site build
+
+on:
+  push:
+    branches: [ master, sphinx ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build HTML
+      run: |
+        pip install -r requirements.txt
+        pip install sphinx
+        pip install kentigern
+        
+        make html
+        
+    - name: SCP Deploy HTML
+      # You may pin to the exact commit or the version.
+      # uses: horochx/deploy-via-scp@bf9a636d9a475a714e375ba1cc455d1c5c861aef
+      uses: horochx/deploy-via-scp@v1.0.1
+      with:
+        # Local file path
+        local: _build/html/*
+        # Remote file path
+        remote: notes.daniel-williams.co.uk/gravitation
+        # Remote server address
+        host: ${{ secrets.sshhost }}
+        # Remote server user
+        user: ${{ secrets.sshuser }}
+        # Remote server private key
+        key: ${{ secrets.sshkey }}
