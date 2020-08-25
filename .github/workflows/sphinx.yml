@@ -18,7 +18,6 @@ jobs:
     - name: Build HTML
       run: |
         pip install sphinx
-	pip install -r requirements.txt
         pip install kentigern
         
         make html
