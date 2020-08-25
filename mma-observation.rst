@@ -183,7 +183,7 @@ network it is possible to reduce this area, as increasing the number of
 detector pairs works to reduce the sky area compatible with the observed
 delay times.
 
-.. figure:: figures/timing-circles.*
+.. figure:: figures/timing-circles.png
    :alt: The isochrones for the 2nd generation detectors.
 
 
