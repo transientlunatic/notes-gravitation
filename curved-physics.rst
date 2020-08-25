@@ -5,23 +5,20 @@ Physics in curved spacetimes
 Recall the definition of the Ricci tensor and the Ricci scalar,
 
 .. math::
-
-   \tag{\ref{eq:69}}
+   
      \tensor{R}{_{\beta \nu}} = \tensor{g}{^{\alpha \mu}} \tensor{R}{_{\alpha \beta \mu \nu}} = \tensor{R}{^{\mu}_{\beta \mu \nu}}
 
  and
 
 .. math::
 
-   \tag{\ref{eq:70}}
      R = \tensor{g}{^{\beta \nu}} \tensor{R}{_{\beta \nu}}
 
  Note that the Ricci tensor is symmetric; by differentiating equation ,
 
 .. math::
 
-   \label{eq:92}
-     2 \tensor{R}{_{\alpha \beta \mu \nu, \lambda}} = \tensor{g}{_{\alpha \beta, \beta \mu \lambda}} - \tensor{g}{_{\alpha \mu, \beta \nu \lambda}} 
+     2 {R}_{\alpha \beta \mu \nu, \lambda} = \tensor{g}{_{\alpha \beta, \beta \mu \lambda}} - \tensor{g}{_{\alpha \mu, \beta \nu \lambda}} 
                                               +\tensor{g}{_{\beta \mu, \alpha \nu \lambda}} - \tensor{g}{_{\beta \nu, \alpha \mu \lambda}}
 
  Recalling that partial derivatives do commute,
