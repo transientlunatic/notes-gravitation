@@ -608,5 +608,3 @@ start of the inspiral and the merger is approximately
    the sun, which meant observations were only possible shortly after
    the onset of twilight for optical telescopes.
 
-.. |image| image:: figures/gw170817-localisation.pdf
-
