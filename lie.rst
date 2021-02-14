@@ -45,11 +45,18 @@ Lie dragging a function
 For a function :math:`f` defined on a manifold the Lie dragging defines a function :math:`f^{*}_{\Delta\lambda}` such that if a point :math:`P`
 was mapped to a point :math:`Q`, after moving along the curve the new field :math:`f^{*}_{\Delta \lambda}` has the same value at :math:`Q` as :math:`f` had at :math:`P`, that is
 
+
 .. math:: f(P) = f^{*}_{\Delta \lambda} (Q)
 
 If :math:`f^{*}_{\Delta \lambda} (Q) = F(Q)` for all :math:`Q` the function is invariant under the mapping.
+
 If it is invariant under all :math:`\Delta \lambda` then it is **Lie Dragged** by the field :math:`\frac{\dd}{\dd \lambda}`.
 Because of this, a Lie dragged function will have :math:`\frac{\dd f}{\dd \lambda} = 0`.
+
+In the limit of infinitessimal :math:`\Delta \lambda` and infinitessimal separation between two curves, :math:`(1)` and :math:`(2)`, if :math:`\dv{\mu}` at the point :math:`P` stretches from :math:`P` to :math:`R` along :math:`(A)`, then :math:`\dv{\mu^{*}_{\Delta \lambda}}` will stretch from :math:`Q` to :math:`S` on :math:`(A')`.
+If :math:`\dv{\mu}` is Lie dragged, then it will also stretch from :math:`Q` to :math:`S`, implying :math:`\comm{\dv{\lambda}}{\dv{\mu}} = 0`.
+Thus a vector field is Lie dragged if its Lie Bracket with the dragging field vanishes.
+
 
 Lie dragging a vector field
 ---------------------------
@@ -88,6 +95,7 @@ We can define an operator for this derivative, :math:`\ld_V` with :math:`V` the 
 	   
     \ld_{V} f = V(f) = \frac{\dd f}{\dd \lambda}
 
+
 Carrying out the same procedure on a field :math:`U = \frac{\dd}{\dd \mu}`, and considering the definition of a vector in terms of its effect on functions, so we define an arbitrary function :math:`f`.
 At
 :math:`\lambda_0` the field :math:`U` gives the derivative
@@ -102,6 +110,7 @@ The vanishing commutator implies
 .. math::
    
    \frac{\dd}{\dd \lambda} \frac{\dd}{\dd \mu^{*}} f = \frac{\dd}{\dd \mu^{*}} \frac{\dd}{\dd \lambda} f
+
 
 We then define the Lie derivative :math:`\ld_V U` as the vector field operating on :math:`f` to give
 
@@ -129,7 +138,7 @@ on any dragged vector field is constant, so the Lie derivative of
    \label{eq:23}
      \ld{V}{\of{\omega}} = \qty(\ld{V}{\of{\omega}})(W) + \of{\omega} \qty(\ld{V}{W})
 
- extending this to tensors of higher order,
+extending this to tensors of higher order,
 
 .. math::
 
@@ -194,7 +203,7 @@ In quantum mechanics we can define an operator,
        \comm{\Op{l}_z}{\Op{l}_x} &= - \Op{l}_y
      \end{aligned}
 
- these generate a submanifold, apparently with three dimensions, but
+these generate a submanifold, apparently with three dimensions, but
 noting that each of the operators is tangent to a sphere of constant
 radius, and recalling that the contraction of this sphere with an
 operator is the number of spherical surfaces which the operator pierces,
@@ -235,7 +244,7 @@ A Killing vector field is a vector field :math:`\vec{V}` such that
    \label{eq:26}
      \ld{\vec{V}}{\ten{g}} = 0
 
- for :math:`\ten{g}` the metric tensor, which, in component notation
+for :math:`\ten{g}` the metric tensor, which, in component notation
 
 .. math::
 
@@ -244,7 +253,7 @@ A Killing vector field is a vector field :math:`\vec{V}` such that
                                         +\ten{g}_{ik} \pdv{x^j} V^k
                                         +\ten{g}_{kj} \pdv{x^i} V^k = 0
 
- The Killing vector field is then the metric which is invariant given a
+The Killing vector field is then the metric which is invariant given a
 specific vector field. Using a coordinate system where the integral
 curves of :math:`\vec{V}` are one family of coordinate lines, e.g.~ for
 the :math:`x^1` coordinate, then
@@ -254,7 +263,7 @@ the :math:`x^1` coordinate, then
    \label{eq:28}
      \ten{ \qty( \ld{\vec{V}}{g} )}_{ij} =\pdv{x^1} \ten{g}_{ij} =0
 
- So the metric components are independent of the coordinate :math:`x^1`,
+So the metric components are independent of the coordinate :math:`x^1`,
 and conversely if there is a coordiante system where the representation
 of the metric is independent of a certain coordinate the corresponding
 basis vector to the coordinate is a Killing vector.
@@ -277,7 +286,7 @@ then, for an operator :math:`\Op{L}` and unknown :math:`\psi`,
    \label{eq:29}
      \Op{L}(\psi) = 0
 
- where :math:`\Op{L}` is independent of a coordinate transformation
+where :math:`\Op{L}` is independent of a coordinate transformation
 :math:`\phi \to
 \phi + \textrm{const}`. The solutions of are not necessarily
 axisymmetric, but scalar solutions can be Fourier-analysed in
@@ -288,7 +297,7 @@ axisymmetric, but scalar solutions can be Fourier-analysed in
    \label{eq:30}
      \psi(\phi, x^i) = \sum_{m=-\infty}^{\infty} \psi_m(x^j) e^{i m \phi}
 
- the functions :math:`\psi_m(x^j)` satisfy the related differential
+the functions :math:`\psi_m(x^j)` satisfy the related differential
 equation
 
 .. math::
@@ -296,19 +305,19 @@ equation
    \label{eq:31}
      0 = \Op{L}_m(\phi_m) = e^{-i m \phi} L(\psi_m e^{im\phi})
 
- A solution :math:`\psi`, is an axial eigenvalue, :math:`m`, if
+A solution :math:`\psi`, is an axial eigenvalue, :math:`m`, if
 
 .. math::
 
    \label{eq:32}
      \ld{\vec{e}_{\phi}} \psi = i m \psi
 
- for :math:`\vec{e}_{\phi}` tangent to the circles of symmetry. Any
+for :math:`\vec{e}_{\phi}` tangent to the circles of symmetry. Any
 vector field satisfying
 
 .. math:: \ld{\vec{e}_{\phi}}{\vec{V}} = i m \vec{V}
 
- can be expressed in terms of a linear combination of vector axial
+can be expressed in terms of a linear combination of vector axial
 harmonics with eigenvalue :math:`m`, of the form
 :math:`\vec{e}_j e^{i m \phi}`, with coefficients independent of
 :math:`\phi`.
@@ -321,54 +330,32 @@ structure compatible with the group structure, that is, the operation
 :math:`G \times G \to G` by :math:`(x,y) \to x y^{-1}` is a
 differentiable mapping.
 
-| Consider a finite-dimensional Lie group, :math:`G`. Any neighbourhood
-  of :math:`e` is mapped to a neighbourhood of :math:`g` by a mapping,
-  which also carries all of the tangent vectors, so the mapping is
-  denoted :math:`L_g : T_e \to
+Consider a finite-dimensional Lie group, :math:`G`.
+Any neighbourhood of :math:`e` is mapped to a neighbourhood of :math:`g` by a mapping, which also carries all of the tangent vectors, so the mapping is denoted :math:`L_g : T_e \to
   T_g`.
-| A vector :math:`V` is left-invariant if :math:`L_g` maps :math:`V` at
-  :math:`e` to :math:`V` at :math:`g`, i.e. :math:`L_g: V(e) \to V(g)`,
-  for all :math:`g`. It follows that :math:`L_g` maps
-  :math:`V(h) \to V(gh)` for any :math:`h` in :math:`G`, giving a
-  definition of a constant vector field on :math:`G`. If any two vector
-  fields :math:`V` and :math:`W` are left-invariant then
-  :math:`\comm{V}{W}` is also a left-invariant field, so the fields form
-  a Lie algebra, :math:`\mathfrak{L}(G)`, or :math:`\mathfrak{g}`.
+A vector :math:`V` is left-invariant if :math:`L_g` maps :math:`V` at :math:`e` to :math:`V` at :math:`g`, i.e. :math:`L_g: V(e) \to V(g)`, for all :math:`g`. It follows that :math:`L_g` maps :math:`V(h) \to V(gh)` for any :math:`h` in :math:`G`, giving a definition of a constant vector field on :math:`G`. If any two vector fields :math:`V` and :math:`W` are left-invariant then :math:`\comm{V}{W}` is also a left-invariant field, so the fields form a Lie algebra, :math:`\mathfrak{L}(G)`, or :math:`\mathfrak{g}`.
 
-Let :math:`\set{V_{(i)}}` be a set of basis fields for a Lie algebra,
-then
+Let :math:`\set{V_{(i)}}` be a set of basis fields for a Lie algebra, then
 
 .. math::
 
    \label{eq:25}
      \comm{V_{(k)}}{V_{(l)}} = \ten{c}_{kl}^j V_{(j)}
 
- these :math:`c` are the structure constants which characterise the
-algebra; if these disappear then the algebra is said to be Abelian.
-These components transform as the components of a (1,2)-tensor, and each
-Lie group and algebra has a unique structure tensor :math:`\ten{C}`.
+these :math:`c` are the structure constants which characterise the algebra; if these disappear then the algebra is said to be Abelian. 
+These components transform as the components of a (1,2)-tensor, and each Lie group and algebra has a unique structure tensor :math:`\ten{C}`.
 
-For an integral curve of a field :math:`V` which passes through
-:math:`e`; it has a tangent vector :math:`V_e`, and a unique parameter
-:math:`t` for which :math:`e` corresponds to :math:`t=0`. The points on
-the curve can be found by eponentiation of :math:`V`, :math:`\exp(tV)`,
-defining a one-parameter subgroup of :math:`G`, and since each of these
-passes through :math:`e` there must be an injective relationship between
-the one-parameter subgroups of :math:`G` and its Lie algebra.
+For an integral curve of a field :math:`V` which passes through :math:`e`; it has a tangent vector :math:`V_e`, and a unique parameter :math:`t` for which :math:`e` corresponds to :math:`t=0`.
+The points on the curve can be found by eponentiation of :math:`V`, :math:`\exp(tV)`, defining a one-parameter subgroup of :math:`G`, and since each of these passes through :math:`e` there must be an injective relationship between the one-parameter subgroups of :math:`G` and its Lie algebra.
 
-A theorem exists that states that every Lie algebra is the algebra of
-one, and only one simply-connected Lie group.
+A theorem exists that states that every Lie algebra is the algebra of one, and only one simply-connected Lie group.
 
 Group Representations
 =====================
 
-A group representation is a means of describing an abstract group in
-terms of linear transformations of vector spaces.
+A group representation is a means of describing an abstract group in terms of linear transformations of vector spaces.
 
-[Group Representation] A representation, :math:`\rho`, of a group
-:math:`\mathrm{G}` on a vector space :math:`V` over a field :math:`K` is
-a group homomorphism from :math:`\mathrm{G}` to the general linear
-group, :math:`\mathrm{GL}(V)`,
+[Group Representation] A representation, :math:`\rho`, of a group :math:`\mathrm{G}` on a vector space :math:`V` over a field :math:`K` is a group homomorphism from :math:`\mathrm{G}` to the general linear group, :math:`\mathrm{GL}(V)`,
 
 .. math::
 
@@ -380,16 +367,17 @@ with the property
 .. math::
 
    \rho(g_1 g_2) = \rho(g_1)
-     \rho(g_2)
+   \rho(g_2)
 
- for :math:`g_1, g_2` elements of :math:`\mathrm{G}`.
+for :math:`g_1, g_2` elements of :math:`\mathrm{G}`.
 
-[Faithful representation] A faithful representation occurs if the group
-homomorphism is an injective mapping, i.e. every element in the group is
-represented in the general linear group.
+.. glossary::
 
-Consider the cyclic group, :math:`{\mathrm{C_3}}=\set{1, u, u^2}`. This
-has a representation on :math:`\mathbb{C}^2` as
+   faithful representation
+      A faithful representation occurs if the group homomorphism is an injective mapping, i.e. every element in the group is represented in the general linear group.
+
+Consider the cyclic group, :math:`{\mathrm{C_3}}=\set{1, u, u^2}`.
+This has a representation on :math:`\mathbb{C}^2` as
 
 .. math::
 
@@ -402,7 +390,7 @@ has a representation on :math:`\mathbb{C}^2` as
      1 & 0 \\ 0 & u^2
    \end{bmatrix}
 
- with :math:`u = e^{2 \pi i / 3}`, or, an isomorphic representation is
+with :math:`u = e^{2 \pi i / 3}`, or, an isomorphic representation is
 
 .. math::
 
@@ -414,5 +402,3 @@ has a representation on :math:`\mathbb{C}^2` as
    \begin{bmatrix}
      u^2 & 0 \\ 0 & 1
    \end{bmatrix}
-
-

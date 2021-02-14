@@ -2,22 +2,21 @@
 The physics of gravity
 **********************
 
+.. math:: \require{physics}
+
 Thought experiments on gravitation
 ==================================
 
 Gravitational redshift
 ----------------------
 
-Imagine a particle of mass :math:`m` dropping through a distance
-:math:`h`; the particle starts with energy :math:`E=m` and ends with
-energy :math:`E=m+mgh`. We then send this back up to the first position,
-where it has energy :math:`E'`. We know :math:`E'=m`, since we’d have a
-way of making free energy otherwise! Thus
+Imagine a particle of mass :math:`m` dropping through a distance :math:`h`; the particle starts with energy :math:`E=m` and ends with energy :math:`E=m+mgh`. We then send this back up to the first position, where it has energy :math:`E'`.
+We know :math:`E'=m`, since we’d have a way of making free energy otherwise!
+Thus
 
 .. math:: E' = m = \frac{E}{1+gh}
 
-Hence, travelling in a gravitational field causes photons to become
-redshifted.
+Hence, travelling in a gravitational field causes photons to become redshifted.
 
 Schild’s photons
 ----------------
@@ -72,17 +71,15 @@ to gravity is
 
 .. math::
 
-   \label{eq:74}
-     F = G \frac{M m }{z^2}
+   F = G \frac{M m }{z^2}
 
- and so
+and so
 
 .. math::
 
-   \label{eq:75}
-     \dv[2]{\xi}{t} = k \dv[2]{z}{t} = -k \frac{F}{m} = -k \frac{GM}{z^2} = - \xi \frac{GM}{z^3}
+   \dv[2]{\xi}{t} = k \dv[2]{z}{t} = -k \frac{F}{m} = -k \frac{GM}{z^2} = - \xi \frac{GM}{z^3}
 
- Thus, as the particles fall they move towards each other.
+Thus, as the particles fall they move towards each other.
 
 There is no universal inertial frame
 ------------------------------------

@@ -2,6 +2,8 @@
 Black Holes
 ***********
 
+.. include:: macros
+
 Beyond white dwarfs and neutron stars
 =====================================
 
@@ -24,25 +26,25 @@ coordinate problem, we can consider a particle falling across the
 :math:`R>2M`, and is released at a coordinate time :math:`t=0`, and
 proper time :math:`\tau=0` in the particle’s rest frame. Then
 
-.. math:: \qty( \dv{r}{\tau} )^2 = k^2 - 1 - \frac{h^2}{r^2} + \frac{2M}{r} \qty( 1+ \frac{h^2}{r^2})
+.. math:: \left( \dv{r}{\tau} \right)^2 = k^2 - 1 - \frac{h^2}{r^2} + \frac{2M}{r} \left( 1+ \frac{h^2}{r^2}\right)
 
- and
+and
 
 .. math:: \dv{\phi}{\tau} = \frac{h}{r^2}
 
- For a radial trajectory :math:`h=0`, and
+For a radial trajectory :math:`h=0`, and
 
-.. math:: \qty( \dv{r}{\tau})^2 = k^2 -1 + \frac{2M}{r}
+.. math:: \left( \dv{r}{\tau}\right)^2 = k^2 -1 + \frac{2M}{r}
 
- and as it is initially at rest,
+and as it is initially at rest,
 
-.. math:: k^2-1=- \frac{2M}{R} \implies \qty( \dv{r}{\tau})^2 = \frac{2M}{r}-\frac{2M}{R}
+.. math:: k^2-1=- \frac{2M}{R} \implies \left( \dv{r}{\tau}\right)^2 = \frac{2M}{r}-\frac{2M}{R}
 
- Given that the particle is falling inwards,
+Given that the particle is falling inwards,
 
 .. math:: \dd{\tau} = - \frac{\dd{r}}{\sqrt{\frac{2M}{r} - \frac{2M}{R}}}
 
- So the elapsed proper time experienced by the particle as it falls from
+So the elapsed proper time experienced by the particle as it falls from
 :math:`r=R` to :math:`r=2M` is
 
 .. math::
@@ -50,23 +52,23 @@ proper time :math:`\tau=0` in the particle’s rest frame. Then
    \label{eq:231}
      \Delta \tau = \int_{2M}^R \frac{\dd{r}}{\sqrt{\frac{2M}{r} - \frac{2M}{R}}}
 
- This integral is finite, and so the particle reaches the surface in a
+This integral is finite, and so the particle reaches the surface in a
 finite time. What about the interval in coordinate time?
 
 .. math:: \dv{t}{\tau} = \frac{k}{1-\frac{2M}{r}} = \frac{\sqrt{1- \frac{2M}{R}}}{1-\frac{2M}{r}}
 
- so
+so
 
-.. math:: \dd{t} = - \frac{\sqrt{1 - \frac{2M}{R}}}{\sqrt{\frac{2M}{r} - \frac{2M}{R}} \qty( 1 - \frac{2M}{r})} \dd{r}
+.. math:: \dd{t} = - \frac{\sqrt{1 - \frac{2M}{R}}}{\sqrt{\frac{2M}{r} - \frac{2M}{R}} \left( 1 - \frac{2M}{r}\right)} \dd{r}
 
- and so
+and so
 
 .. math::
 
    \label{eq:233}
-     \Delta t = \int_{2M}^R  \frac{\sqrt{1 - \frac{2M}{R}}}{\sqrt{\frac{2M}{r} - \frac{2M}{R}} \qty( 1 - \frac{2M}{r})} \dd{r}
+     \Delta t = \int_{2M}^R  \frac{\sqrt{1 - \frac{2M}{R}}}{\sqrt{\frac{2M}{r} - \frac{2M}{R}} \left( 1 - \frac{2M}{r}\right)} \dd{r}
 
- This integral diverges as :math:`r \to 2M`, so it takes an infinite
+This integral diverges as :math:`r \to 2M`, so it takes an infinite
 amount of coordinate time to reach the radius. The same is true for a
 photon. Thus an external observer sees the particle taking an infinite
 time to fall into the black hole.
@@ -97,7 +99,7 @@ horizon, with :math:`\dd{r} = \dd{\theta} = \dd[\phi] = 0`, but
 :math:`\dd{t} \neq
 0`, then
 
-.. math:: \dd{s}^2 = - \qty( 1 - \frac{2M}{r} ) \dd{t}^2
+.. math:: \dd{s}^2 = - \left( 1 - \frac{2M}{r} \right) \dd{t}^2
 
 Since :math:`r<2M` it follows that this interval must be positive, so
 cannot lie on the worldline of the particle, and so a particle cannot
@@ -117,9 +119,9 @@ we introduce a new time coordinate,
 .. math::
 
    \label{eq:235}
-     \dd{s}^2 = - \qty(1 - \frac{2M}{r}) \dd{\tilde{t}}^2 + \frac{4M}{r} \dd{r} \dd{\tilde{t}} + \qty( 1 + \frac{2M}{r}) \dd{r}^2
+     \dd{s}^2 = - \left(1 - \frac{2M}{r} \right) \dd{\tilde{t}}^2 + \frac{4M}{r} \dd{r} \dd{\tilde{t}} + \left( 1 + \frac{2M}{r}\right) \dd{r}^2
 
- which has no coordinate singularity at :math:`r=2M` (but has one at
+which has no coordinate singularity at :math:`r=2M` (but has one at
 :math:`r=0`, which is a *physical* singularity).
 
 We can then obtain the equations of the null cones by setting
@@ -130,9 +132,9 @@ at
 .. math::
 
    \label{eq:236}
-     \dv{\tilde{t}}{r} = \qty{-1, \frac{1 + 2M/r}{1-2M/r}}
+     \dv{\tilde{t}}{r} = \left\{-1, \frac{1 + 2M/r}{1-2M/r} \right}
 
- As :math:`r` approaches the Schwarzschild radius the light cones start
+As :math:`r` approaches the Schwarzschild radius the light cones start
 to tip over, and at :math:`r=R~s` the null cone has a vertical edge, so
 all timelike geodesics then point inwards.
 
@@ -152,64 +154,53 @@ star’s gravity field, with the redshift, :math:`z`,
    \label{eq:237}
      z \equiv \frac{\lambda~o - \lambda~e}{\lambda~e} = \sqrt{\frac{1 - 2M/r~o}{1-2M/r~e}} -1  = \sqrt{\frac{r~e (r~o-R~s)}{r~o (r~e - R~s)}} - 1
 
- which diverges as :math:`r~e \to R~s`. The bolometric luminosity of the
+which diverges as :math:`r~e \to R~s`. The bolometric luminosity of the
 star, compared to its constant luminosity :math:`L~c`, ignoring
 relativistic effects is
 
 .. math:: L(t_0) = \frac{L~c}{(1+z)^2}
 
- This can be understood by considering the energy of each photon
+This can be understood by considering the energy of each photon
 received by the observer is redshifted by a factor :math:`(1+z)`, and
 the arrival times are increased by the same factor, so the luminosity is
 reduced by the square. The light ray, on a null geodesic, satisfies
 
 .. math:: \int_{t~e}^{t~o} \dd{t} = \int_{r~e}^{r~o} \frac{\dd{r}}{1-2M/r} \equiv  \int_{r~e}^{r~o} \frac{\dd{r}}{1-R~s/r}
 
- Then
+Then
 
 .. math:: t~o - t~e = r~o - r~e - R~s \log( \frac{r~o - R~s}{r~e - R~s} )
 
- and, taking :math:`t_0 = 0`
+and, taking :math:`t_0 = 0`
 
-.. math:: \log( \frac{r~e - R~s}{r~o - R~s} ) = \qty[\frac{t~o - (r~o - r~e)}{R~s}]
+.. math:: \log( \frac{r~e - R~s}{r~o - R~s} ) = left[\frac{t~o - (r~o - r~e)}{R~s} \right]
 
 .. math::
 
    \implies \frac{r~e - R~s}{r~o - R~s} =
    \frac{r~o}{r~e}\frac{1}{(1+z)^2} \propto \exp( - \frac{t~o}{R~s} )
 
- The, reintroducing the speed of light, :math:`c`,
+The, reintroducing the speed of light, :math:`c`,
 
 .. math:: \frac{L(t~o)}{L~c} \propto \exp( - \frac{c t~o}{R~s} )
 
- The luminosity of the star falls off exponentially in the time taken
-for light to cross the Schwarzschild radius.
+The luminosity of the star falls off exponentially in the time taken for light to cross the Schwarzschild radius.
 
 Hawking radiation
 -----------------
 
-The effects of quantum field theory in a curved spacetime do, however,
-allow black holes to have a very faint luminosity—a process known as
-Hawking radiation. This basically relies on the Uncertainty Principle
-allowing energy to be “borrowed” from the vacuum on a timescale
-:math:`\Delta t`, where
+The effects of quantum field theory in a curved spacetime do, however, allow black holes to have a very faint luminosity—a process known as Hawking radiation.
+This basically relies on the Uncertainty Principle allowing energy to be “borrowed” from the vacuum on a timescale :math:`\Delta t`, where
 
 .. math:: \Delta t = \frac{\hbar}{\Delta E}
 
-This allows the temporary production of virtual photon pairs; if this
-occurs on the edge of the event horizon the negative energy member of
-the pair may fall into the black hole, leaving the positive energy
-photon free to propagate outside the black hole, and the negative energy
-one free to propagate inside the black hole. This radiation has a black
-body profile at infinity,
+This allows the temporary production of virtual photon pairs; if this occurs on the edge of the event horizon the negative energy member of the pair may fall into the black hole, leaving the positive energy photon free to propagate outside the black hole, and the negative energy one free to propagate inside the black hole.
+This radiation has a black body profile at infinity,
 
 .. math:: E_{\infty} = \frac{h}{8 \pi M}
 
- This means that a black hole has a thermodynamic temperature, and since
-it is emitting energy, it must be losing mass. The luminosity of a black
-hole can be derived using the Stefan-Boltzmann law, and is proportional
-to the product of the area of the event horizon, :math:`A`, and the
-fourth power of the temperature, :math:`T^4`, so
+This means that a black hole has a thermodynamic temperature, and since it is emitting energy, it must be losing mass.
+The luminosity of a black hole can be derived using the Stefan-Boltzmann law, and is proportional to the product of the area of the event horizon, :math:`A`, and the fourth power of the temperature, :math:`T^4`, so
 
 .. math::
 
@@ -224,7 +215,7 @@ eventually we find
 .. math::
 
    \label{eq:240}
-     \qty( \frac{\tau}{10^{10}\,\text{yr}} ) = \qty( \frac{M}{10^{12}\,\kilogram} )^3
+     \left( \frac{\tau}{10^{10}\,\text{yr}} \right) = \left( \frac{M}{10^{12}\,\kilogram} \right)^3
 
 Black hole thermodynamics
 -------------------------
@@ -242,7 +233,7 @@ a black hole. For a Schwarzschild black hole,
 
  or
 
-.. math:: \dd{M} = \frac{1}{32 \pi M} \dd{A} = \frac{\hbar}{8 \pi k M} \dd{\qty(\frac{Ak}{4 \hbar})}
+.. math:: \dd{M} = \frac{1}{32 \pi M} \dd{A} = \frac{\hbar}{8 \pi k M} \dd{\left(\frac{Ak}{4 \hbar}\right)}
 
  Thus
 
@@ -283,7 +274,7 @@ Conservation of four momentum on geodesics
 
 A material particle has a geodesic equation
 
-.. math:: \dv{v^{\alpha}}{\tau} + \Gamma^{\alpha}_{\beta \delta} v^{\beta} v^{\delta} = \qty( \pdv{v^{\alpha}}{x^{\beta}} v^{\beta} + \Gamma^{\alpha}_{\beta \delta} v^{\beta} v^{\delta} ) = v^{\beta} \tensor{v}{^{\alpha}_{;\beta}} = 0
+.. math:: \dv{v^{\alpha}}{\tau} + \Gamma^{\alpha}_{\beta \delta} v^{\beta} v^{\delta} = \left( \pdv{v^{\alpha}}{x^{\beta}} v^{\beta} + \Gamma^{\alpha}_{\beta \delta} v^{\beta} v^{\delta} \right) = v^{\beta} \tensor{v}{^{\alpha}_{;\beta}} = 0
 
  The mixed form is
 
@@ -299,7 +290,7 @@ A material particle has a geodesic equation
 
  Or,
 
-.. math:: p^{\alpha}p_{\beta,\alpha} = \Gamma^{\gamma}_{\beta \alpha} p^{\alpha} p_{\gamma} = \half g^{\gamma \nu} \qty( g_{\nu \beta,\alpha} + g_{\nu \alpha, \beta} - g_{\alpha \beta, \nu}) p^{\alpha} p_{\gamma}
+.. math:: p^{\alpha}p_{\beta,\alpha} = \Gamma^{\gamma}_{\beta \alpha} p^{\alpha} p_{\gamma} = \half g^{\gamma \nu} \left( g_{\nu \beta,\alpha} + g_{\nu \alpha, \beta} - g_{\alpha \beta, \nu}\right) p^{\alpha} p_{\gamma}
 
  Which, after contraction and index permutation reduces to
 

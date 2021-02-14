@@ -3,6 +3,7 @@ The energy-momentum tensor
 **************************
 
 .. include:: macros.rst
+.. math:: \require{physics}
 
 Dust, fluid, and flux
 =====================

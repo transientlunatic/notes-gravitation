@@ -56,7 +56,7 @@ Gravitational wave astronomy and astrophysics
 
 .. toctree::
    :caption: Extras
-	     
+
    zbibliography
    glossary
    

@@ -33,8 +33,9 @@ release = 'v0.1'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = ['sphinx.ext.imgconverter',
-              'sphinxcontrib.bibtex',
-              'sphinxcontrib.tikz']
+              #'sphinxcontrib.bibtex',
+              'sphinxcontrib.tikz',
+              'sphinxcontrib.thm']
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -52,7 +53,7 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 #
 
 html_theme = 'kentigern'
-html_theme_path = kentigern.get_html_theme_path()
+#html_theme_path = kentigern.get_html_theme_path()
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
@@ -60,6 +61,7 @@ html_theme_path = kentigern.get_html_theme_path()
 html_static_path = ['_static']
 
 mathjax_path = "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+
 mathjax_config = {
     "loader": {
         "load": ['[tex]/physics', '[siunitx]/siunitx.js'],
